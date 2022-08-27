@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f72d22a82bbb0419b834f654e6eb2b, type: 3}
+  m_Name: NormalMovement
+  m_EditorClassIdentifier: 
+  Action:
+  - {fileID: 11400000, guid: 921c5c0e6503ae94eab0b4c478cad82a, type: 2}
+  Transitions:
+  - {fileID: 11400000, guid: ecd881e24780356409f1d54f1a41f254, type: 2}
