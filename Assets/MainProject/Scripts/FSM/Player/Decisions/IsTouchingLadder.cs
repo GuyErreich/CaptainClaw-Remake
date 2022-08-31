@@ -1,5 +1,6 @@
 using UnityEngine;
 using CaptainClaw.Scripts;
+using System.Collections;
 
 namespace CaptainClaw.Scripts.FSM.Player.Decisions
 {
@@ -8,9 +9,10 @@ namespace CaptainClaw.Scripts.FSM.Player.Decisions
     {
         public override bool Decide(BaseStateMachine stateMachine)
         {
-            var collision = stateMachine.GetComponent<DetectCollision>().GetCollider;
-
-            if (collision.gameObject.CompareTag("Ladder")) {
+            new WaitForSeconds(3f);
+            var collider = stateMachine.GetComponent<DetectCollision>().collider;
+            
+            if (collider.gameObject.CompareTag("Ladder")) {
                 return true;
             }
 

@@ -3,16 +3,26 @@ using UnityEngine;
 namespace CaptainClaw.Scripts
 {
     public class DetectCollision : MonoBehaviour {
-        private new Collider collider;
+        [SerializeField] private float radius = 0.5f;
+        [SerializeField] private float range = 0.5f;
 
-        public Collider GetCollider { get => this.collider; }
+        public new Collider collider { get; private set; }
 
-        private void OnTriggerEnter(Collider other) {
-            this.collider = other;
+        private void FixedUpdate() {
+            RaycastHit hit;
+            if (Physics.SphereCast(this.transform.position, this.radius, this.transform.forward, out hit, this.range)) {
+                this.collider = hit.collider;
+            }
+            else
+                this.collider = null;
         }
 
-        private void OnCollisionEnter(Collision other) {
-            this.collider = other.collider;
+        
+
+
+        void OnDrawGizmosSelected() {
+            Gizmos.DrawLine(this.transform.position, this.transform.position + (this.transform.forward * (this.range - this.radius)));
+            Gizmos.DrawWireSphere(this.transform.position + (this.transform.forward * this.range), this.radius);
         }
     }
 }
