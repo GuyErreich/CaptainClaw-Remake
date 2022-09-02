@@ -1,21 +1,20 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 namespace CaptainClaw.Scripts.FSM
 {
-    [CreateAssetMenu(menuName = "FSM/State")]
-    public sealed class State : BaseState
+    public abstract class State : MonoBehaviour
     {
-        public List<FSMAction> Action = new List<FSMAction>();
-        public List<Transition> Transitions = new List<Transition>();
+        protected StateMachine stateMachine;
 
-        public override void Execute(BaseStateMachine machine)
+        public State(StateMachine stateMachine)
         {
-            foreach (var action in Action)
-                action.Execute(machine);
+            this.stateMachine = stateMachine;
+        }
 
-            foreach(var transition in Transitions)
-                transition.Execute(machine);
+        public virtual Task Start()
+        {
+            return Task.CompletedTask;
         }
     }
 }

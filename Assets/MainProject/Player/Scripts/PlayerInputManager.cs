@@ -4,17 +4,14 @@ using UnityEngine;
 namespace CaptainClaw.Player.Scripts
 {    
     // [RequireComponent(typeof(PlayerController))]
-    [RequireComponent(typeof(MovementController))]
-    [RequireComponent(typeof(LadderMovement))]
+    [RequireComponent(typeof(MovementMode))]
     public class PlayerInputManager : MonoBehaviour {
         // [SerializeField] AbilityStorage abilityStorage;
 
         private PlayerControls controls;
         private PlayerControls.CharacterActions characterInput;
         // private PlayerControls.SlimeRepoActions slimeRepoInput;
-        // private PlayerController playerController;
-        private MovementController movementController;
-        private LadderMovement laddermovement;
+        private InputReceiver receiver;
 
         private Vector2 movement;
         private bool isJumping, isRunnig;
@@ -26,18 +23,14 @@ namespace CaptainClaw.Player.Scripts
             Cursor.visible = false;
 
             this.controls = new PlayerControls();
-            // this.playerController = this.GetComponent<PlayerController>();
-            this.movementController = this.GetComponent<MovementController>();
-            this.laddermovement = this.GetComponent<LadderMovement>();
+            this.receiver = this.GetComponent<InputReceiver>();
 
             this.CharacterInput();
             // this.SlimeRepoInput();
         }
 
         private void Update() {
-            // this.playerController.ReceiveInput(this.movement, this.isRunnig, this.isJumping);
-            this.movementController.ReceiveInput(this.movement, this.isRunnig, this.isJumping);
-            this.laddermovement.ReceiveInput(this.movement, this.isJumping);
+            this.receiver.Receive(this.movement, this.isRunnig, this.isJumping);
         }
 
         private void CharacterInput() {
