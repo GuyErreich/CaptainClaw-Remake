@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace CaptainClaw.Scripts.FSM
 {
-    public class StateMachine : MonoBehaviour
+    public abstract class StateMachine : MonoBehaviour
     {
         protected State state;
 
-        public async void SetState(State state) 
+        public virtual void SetState(State state) 
         {
             this.state = state;
-            await state.Start();
+            StartCoroutine(this.state.On());
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CaptainClaw_Remake.Assets.MainProject.Player.Scripts
+namespace CaptainClaw.Player.Scripts
 {
     [RequireComponent(typeof(CharacterController))]
     public class MovementHandler : MonoBehaviour {

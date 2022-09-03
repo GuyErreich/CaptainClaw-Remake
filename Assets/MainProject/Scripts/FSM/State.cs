@@ -1,20 +1,13 @@
 using UnityEngine;
-using System.Threading.Tasks;
+using System.Collections;
 
 namespace CaptainClaw.Scripts.FSM
 {
     public abstract class State : MonoBehaviour
     {
-        protected StateMachine stateMachine;
-
-        public State(StateMachine stateMachine)
+        public virtual IEnumerator On()
         {
-            this.stateMachine = stateMachine;
-        }
-
-        public virtual Task Start()
-        {
-            return Task.CompletedTask;
+            yield return null;
         }
     }
 }

@@ -1,27 +1,36 @@
 using UnityEngine;
 using CaptainClaw.Scripts.FSM;
-using System.Threading.Tasks;
+using System.Collections;
 
 namespace CaptainClaw.Player.Scripts
 {
-    [RequireComponent(typeof(CharacterController))]
-    public abstract class MovementMode : State {
+    [RequireComponent(typeof(MovementHandler))]
+    public class MovementMode : PlayerState {
         [Header("Stats")]
         [SerializeField] private float speed = 7f;
         [SerializeField] private float rotationSpeed = 2f;
-        [SerializeField, Range(1.1f, 5f)] private float sprintMultiplier = 1.5f;
+        [SerializeField, Range(1f, 5f)] private float sprintMultiplier = 1.5f;
 
-        protected MovementMode(StateMachine stateMachine) : base(stateMachine) {}
+        private PlayerMachine.StateModes jumpMode = PlayerMachine.StateModes.Jumping;
 
-        public override async Task Start()
-        {
-            var state = await Task.Run(Do());
-            stateMachine.SetState(state);
-        }
+        public override IEnumerator On() {
+            while (true)
+            {
+                var direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.forward * InputReceiver.Movement.y);
+                var finalSpeed = this.speed * this.sprintMultiplier;
 
-        protected State Do()
-        {
-            return this;
+                MovementHandler.HandleMovement(direction, finalSpeed);
+                MovementHandler.HandleGravity();
+                MovementHandler.HandleRotation(this.transform, this.rotationSpeed);
+
+                yield return null;
+
+                if (InputReceiver.JumpPressed)
+                    break;
+            }
+
+            if(InputReceiver.JumpPressed)
+                base.ChangeState(jumpMode);
         }
     }
 }

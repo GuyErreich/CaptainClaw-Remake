@@ -1,28 +1,30 @@
 using UnityEngine;
 using CaptainClaw.Scripts.FSM;
-using System.Collections.Generic;
 using System;
 using System.Linq;
 
 namespace CaptainClaw.Player.Scripts
 {
-    public class PlayerController : StateMachine {
+    [RequireComponent(typeof(PlayerInputManager))]
+    [RequireComponent(typeof(MovementMode))]
+    [RequireComponent(typeof(InAirMode))]
+    public class PlayerMachine : StateMachine {
         public enum StateModes {
             OnGround = 0,
-            Jumping = 1,
-            ClimbLadder = 2
+            Jumping = 1
         }
 
         [SerializeField] private StateModes InitState;
         
-        private State[] States;
+        public State[] States { get; private set; }
+
         private void Awake() {
-            var arraySize = Enum.GetValues(typeof(StateModes)).Cast<StateModes>().Last();
+            var arraySize = Enum.GetValues(typeof(StateModes)).Cast<StateModes>().Last() + 1;
             this.States = new State[(int)arraySize];
 
             this.States[(int)StateModes.OnGround] = this.GetComponent<MovementMode>();
             this.States[(int)StateModes.Jumping] = this.GetComponent<InAirMode>();
-            this.States[(int)StateModes.ClimbLadder] = this.GetComponent<MovementMode>();
+            // this.States[(int)StateModes.ClimbLadder] = this.GetComponent<MovementMode>();
         }
 
         private void Start()

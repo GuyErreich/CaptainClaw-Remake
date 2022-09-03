@@ -1,10 +1,7 @@
 using UnityEngine; 
-// using UnityEngine.Events;
 
 namespace CaptainClaw.Player.Scripts
-{    
-    // [RequireComponent(typeof(PlayerController))]
-    [RequireComponent(typeof(MovementMode))]
+{
     public class PlayerInputManager : MonoBehaviour {
         // [SerializeField] AbilityStorage abilityStorage;
 
@@ -23,14 +20,13 @@ namespace CaptainClaw.Player.Scripts
             Cursor.visible = false;
 
             this.controls = new PlayerControls();
-            this.receiver = this.GetComponent<InputReceiver>();
 
             this.CharacterInput();
             // this.SlimeRepoInput();
         }
 
         private void Update() {
-            this.receiver.Receive(this.movement, this.isRunnig, this.isJumping);
+            InputReceiver.Receive(this.movement, this.isRunnig, this.isJumping);
         }
 
         private void CharacterInput() {
