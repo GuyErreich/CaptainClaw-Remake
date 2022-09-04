@@ -17,12 +17,12 @@ namespace CaptainClaw.Scripts
                 this.collider = null;
         }
 
-        
-
+        public new bool CompareTag(string tag) => collider != null && collider.tag == "Ladder";
 
         void OnDrawGizmosSelected() {
             Gizmos.DrawLine(this.transform.position, this.transform.position + (this.transform.forward * (this.range - this.radius)));
             Gizmos.DrawWireSphere(this.transform.position + (this.transform.forward * this.range), this.radius);
         }
+
     }
 }

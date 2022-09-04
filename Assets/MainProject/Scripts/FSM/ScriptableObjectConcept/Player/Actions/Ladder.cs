@@ -1,5 +1,5 @@
 // using UnityEngine;
-// using CaptainClaw.Player.Scripts;
+// using CaptainClaw.Scripts.Player;
 
 
 // namespace CaptainClaw.Scripts.FSM.ScriptableObjectConcept.Player.Actions

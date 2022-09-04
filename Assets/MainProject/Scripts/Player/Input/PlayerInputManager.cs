@@ -1,6 +1,6 @@
 using UnityEngine; 
 
-namespace CaptainClaw.Player.Scripts
+namespace CaptainClaw.Scripts.Player
 {
     public class PlayerInputManager : MonoBehaviour {
         // [SerializeField] AbilityStorage abilityStorage;

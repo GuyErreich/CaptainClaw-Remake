@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CaptainClaw.Player.Scripts
+namespace CaptainClaw.Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
     public class MovementHandler : MonoBehaviour {
@@ -11,56 +11,59 @@ namespace CaptainClaw.Player.Scripts
 
         public static bool isMoving { get; private set; } 
         public static bool isRunning { get; private set; } 
-        public static bool isJumping { get; private set; }
-
         public static bool isGrounded { get => _charController.isGrounded; }
+        public static bool jumpAgain { get; private set; }
 
-        private void Awake() {
-            _charController = this.GetComponent<CharacterController>();
-        }
+        private void Awake() => _charController = this.GetComponent<CharacterController>();
 
-        public static void HandleMovement(Vector3 direction, float speed) {
+        public static void Move(Vector3 direction, float speed) {
             _velocity = direction * speed;
             _velocity.y = _ySpeed;
 
             _charController.Move(_velocity * Time.deltaTime);
         }
 
-        public static void HandleGravity() {
+        public static void Gravity() {
             if (!_charController.isGrounded)
                 _ySpeed += Physics.gravity.y * Time.deltaTime;
-            else if(_ySpeed < 0f)
-                _ySpeed = 0f;
+
+            if(_charController.isGrounded) {
+                _lastGroundedTime = Time.time;
+
+                if(_ySpeed < 0f)
+                    _ySpeed = 0f;
+            }
         }
 
-        public static void HandleRotation(Transform self ,float rotationSpeed) {
+        public static void Rotate(Transform self ,float rotationSpeed) {
             float rotationAngle = Mathf.LerpAngle(self.eulerAngles.y, Camera.main.transform.eulerAngles.y, rotationSpeed * Time.deltaTime);
             self.transform.eulerAngles = new Vector3(0f, rotationAngle, 0f);
         }
 
-        public static void HandleJump(float jumpForce, float jumpGracePeriod) {
-            if(_charController.isGrounded)
-            {
-                isJumping = false;
-                _lastGroundedTime =  Time.time;
-            }
+        public static void Jump(float jumpForce, float jumpGracePeriod) {
+            if (InputReceiver.JumpPressed)
+                _jumpButtonPressedTime = Time.time;
 
-            _jumpButtonPressedTime = Time.time;
+            //gives a little period while you are in the air 
+            jumpAgain = Time.time - _jumpButtonPressedTime <= jumpGracePeriod;
 
             // The same as checking ground but gives a little preiod where it still considers you grounded.
             // this gives the char a better jump interaction because most of the times people dont press the jump
             // button in the perfect right time to make the char jump again. 
             if (Time.time - _lastGroundedTime <= jumpGracePeriod) {
-                //_does the same but gives a little period while you are in the air 
-                if (Time.time - _jumpButtonPressedTime <= jumpGracePeriod) {
-                    _ySpeed = jumpForce;
-                    isJumping = true;
-                    // this.jumpPressed = false;
+                _ySpeed = jumpForce;
 
-                    _lastGroundedTime = null;
-                    _jumpButtonPressedTime = null;
-                }
+                _lastGroundedTime = null;
+                _jumpButtonPressedTime = null;
             }
+        }
+
+        public static void Climb(Vector3 direction, float speed) {
+            _lastGroundedTime = Time.time;
+
+            _velocity = direction * speed;
+
+            _charController.Move(_velocity * Time.deltaTime);
         }
     }
 }

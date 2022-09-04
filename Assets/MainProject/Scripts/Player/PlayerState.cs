@@ -1,16 +1,16 @@
 using CaptainClaw.Scripts.FSM;
 
-namespace CaptainClaw.Player.Scripts
+namespace CaptainClaw.Scripts.Player
 {
     public class PlayerState : State
     {
         protected PlayerMachine stateMachine;
 
-        private void Awake() {
+        private void Start() {
             this.stateMachine = GetComponent<PlayerMachine>();
         }
 
-        protected void ChangeState(PlayerMachine.StateModes mode) {
+        protected void ChangeState(PlayerStates mode) {
             this.stateMachine.SetState(this.stateMachine.States[(int)mode]);
         }
     }
