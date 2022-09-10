@@ -14,6 +14,8 @@ namespace CaptainClaw.Scripts.Player
 
         private DetectCollision detectCollider;
 
+        private bool Climb { get => this.detectCollider.CompareTag("Ladder") && MovementHandler.climbAgain;}
+
         private void Awake() => this.detectCollider = this.GetComponent<DetectCollision>();
 
         public override IEnumerator On() {
@@ -37,7 +39,7 @@ namespace CaptainClaw.Scripts.Player
                     break;
                 }
 
-                if (this.detectCollider.CompareTag("Ladder") ) {
+                if (this.Climb) {
                     nextState = PlayerStates.ClimbLadder;
                     break;
                 }

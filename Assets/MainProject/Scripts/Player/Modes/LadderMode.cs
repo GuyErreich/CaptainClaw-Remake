@@ -18,7 +18,7 @@ namespace CaptainClaw.Scripts.Player
                 var direction = (this.transform.up * InputReceiver.Movement.y);
                 var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1);
                 finalSpeed *= this.speed;
-                MovementHandler.Climb(direction, finalSpeed);
+                MovementHandler.Climb(direction, finalSpeed, climbGracePeriod);
 
                 yield return null;
 

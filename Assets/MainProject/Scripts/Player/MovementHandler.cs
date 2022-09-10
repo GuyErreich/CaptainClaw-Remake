@@ -7,12 +7,14 @@ namespace CaptainClaw.Scripts.Player
         private static CharacterController _charController;
         private static Vector3 _velocity;
         private static float _ySpeed;
-        private static float? _lastGroundedTime, _jumpButtonPressedTime;
+        private static float? _lastGroundedTime, _jumpButtonPressedTime, _lastClimbTime;
+        private static float _climbGracePeriod;
 
         public static bool isMoving { get; private set; } 
         public static bool isRunning { get; private set; } 
         public static bool isGrounded { get => _charController.isGrounded; }
-        public static bool jumpAgain { get; private set; }
+        public static bool jumpAgain { get; private set; } 
+        public static bool climbAgain { get => Time.time - _lastClimbTime >= _climbGracePeriod; } 
 
         private void Awake() => _charController = this.GetComponent<CharacterController>();
 
@@ -50,7 +52,7 @@ namespace CaptainClaw.Scripts.Player
             // The same as checking ground but gives a little preiod where it still considers you grounded.
             // this gives the char a better jump interaction because most of the times people dont press the jump
             // button in the perfect right time to make the char jump again. 
-            if (Time.time - _lastGroundedTime <= jumpGracePeriod) {
+            if (Time.time - _lastGroundedTime <= jumpGracePeriod || Time.time - _lastClimbTime <= jumpGracePeriod) {
                 _ySpeed = jumpForce;
 
                 _lastGroundedTime = null;
@@ -58,12 +60,16 @@ namespace CaptainClaw.Scripts.Player
             }
         }
 
-        public static void Climb(Vector3 direction, float speed) {
-            _lastGroundedTime = Time.time;
-
+        public static void Climb(Vector3 direction, float speed, float climbGracePeriod) {
+            _lastClimbTime = Time.time;
+            _climbGracePeriod = climbGracePeriod;
             _velocity = direction * speed;
 
             _charController.Move(_velocity * Time.deltaTime);
+        }
+
+        public static void HandlePlatforms() {
+
         }
     }
 }

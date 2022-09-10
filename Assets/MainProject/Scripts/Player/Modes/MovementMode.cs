@@ -37,7 +37,7 @@ namespace CaptainClaw.Scripts.Player
                     break;
                 }
                 
-                if (this.detectCollider.CompareTag("Ladder") ) {
+                if (this.detectCollider.CompareTag("Ladder")) {
                     nextState = PlayerStates.ClimbLadder;
                     break;
                 }
