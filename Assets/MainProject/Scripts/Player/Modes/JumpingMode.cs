@@ -4,6 +4,7 @@ using System.Collections;
 namespace CaptainClaw.Scripts.Player
 {
     [RequireComponent(typeof(MovementHandler))]
+    [RequireComponent(typeof(DetectCollision))]
     public class JumpingMode : PlayerState {
         [Header("Stats")]
         [SerializeField] private bool usePhysics = false;
@@ -13,11 +14,11 @@ namespace CaptainClaw.Scripts.Player
         [SerializeField] private float rotationSpeed = 2f;
         [SerializeField, Range(1f, 5f)] private float sprintMultiplier = 1.2f;
 
-        private DetectCollision detectCollider;
+        private DetectCollision detectCollision;
 
-        private bool Climb { get => this.detectCollider.CompareTag("Ladder") && MovementHandler.climbAgain;}
+        private bool Climb { get => this.detectCollision.CompareTag("Ladder", DetectCollision.direction.front) && MovementHandler.climbAgain;}
 
-        private void Awake() => this.detectCollider = this.GetComponent<DetectCollision>();
+        private void Awake() => this.detectCollision = this.GetComponent<DetectCollision>();
 
         public override IEnumerator On() {
             PlayerStates nextState;

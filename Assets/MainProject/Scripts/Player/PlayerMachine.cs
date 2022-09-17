@@ -9,6 +9,7 @@ namespace CaptainClaw.Scripts.Player
     [RequireComponent(typeof(MovementMode))]
     [RequireComponent(typeof(JumpingMode))]
     [RequireComponent(typeof(LadderMode))]
+    [RequireComponent(typeof(PlatformMode))]
     public class PlayerMachine : StateMachine {
 
         [SerializeField] private PlayerStates InitState;
@@ -22,6 +23,7 @@ namespace CaptainClaw.Scripts.Player
             this.States[(int)PlayerStates.GroundMovement] = this.GetComponent<MovementMode>();
             this.States[(int)PlayerStates.Jumping] = this.GetComponent<JumpingMode>();
             this.States[(int)PlayerStates.ClimbLadder] = this.GetComponent<LadderMode>();
+            this.States[(int)PlayerStates.PlatformMovement] = this.GetComponent<PlatformMode>();
         }
         
         private void Start() {
@@ -33,5 +35,6 @@ namespace CaptainClaw.Scripts.Player
         GroundMovement = 0,
         Jumping = 1,
         ClimbLadder = 2,
+        PlatformMovement = 3
     }
 }
