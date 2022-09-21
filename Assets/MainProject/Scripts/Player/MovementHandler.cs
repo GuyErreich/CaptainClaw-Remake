@@ -3,12 +3,14 @@ using UnityEngine;
 namespace CaptainClaw.Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(DetectCollision))]
     public class MovementHandler : MonoBehaviour {
         private static CharacterController _charController;
         private static Vector3 _velocity;
         private static float _ySpeed;
         private static float? _lastGroundedTime, _jumpButtonPressedTime, _lastClimbTime;
         private static float _climbGracePeriod;
+        private static DetectCollision _detectCollision;
 
         public static bool isMoving { get; private set; } 
         public static bool isRunning { get; private set; } 
@@ -16,7 +18,10 @@ namespace CaptainClaw.Scripts.Player
         public static bool jumpAgain { get; private set; } 
         public static bool climbAgain { get => Time.time - _lastClimbTime >= _climbGracePeriod; } 
 
-        private void Awake() => _charController = this.GetComponent<CharacterController>();
+        private void Awake() {
+            _charController = this.GetComponent<CharacterController>();
+            _detectCollision = this.GetComponent<DetectCollision>();
+        }
 
         public static void Move(Vector3 direction, float speed) {
             _velocity = direction * speed;
@@ -68,8 +73,11 @@ namespace CaptainClaw.Scripts.Player
             _charController.Move(_velocity * Time.deltaTime);
         }
 
-        public static void HandlePlatforms() {
+        // public static void PlatformMovement(Vector3 direction, float speed) {
+        //     _velocity = direction * speed;
 
-        }
+        //     _charController.Move(_velocity * Time.deltaTime);
+        // }
+        public static void SetParent(Transform parent) => _charController.transform.SetParent(parent);
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Jumpad
   - Treasure
+  - Platform
   layers:
   - Default
   - TransparentFX
