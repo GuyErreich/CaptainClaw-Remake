@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3204183893210880050}
   m_Layer: 0
   m_Name: JumpPad
-  m_TagString: Untagged
+  m_TagString: Jumpad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 003d4476551006f4bb31c220e187ea67, type: 2}
+  - {fileID: 2100000, guid: 310a926361785c34d82a5f77b103c04e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
