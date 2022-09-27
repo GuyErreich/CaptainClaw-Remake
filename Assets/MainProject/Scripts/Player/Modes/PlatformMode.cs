@@ -29,7 +29,7 @@ namespace CaptainClaw.Scripts.Player
                 MovementHandler.Move(direction, finalSpeed);
                 MovementHandler.Rotate(this.transform, this.rotationSpeed);
 
-                yield return null;
+                yield return new WaitForEndOfFrame();
 
                 if (this.Jump) {
                     MovementHandler.SetParent(null);

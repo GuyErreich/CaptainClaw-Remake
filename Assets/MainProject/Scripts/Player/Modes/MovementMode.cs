@@ -30,7 +30,7 @@ namespace CaptainClaw.Scripts.Player
                 MovementHandler.Gravity();
                 MovementHandler.Rotate(this.transform, this.rotationSpeed);
 
-                yield return null;
+                yield return new WaitForEndOfFrame();
 
                 if (this.Jump) {
                     nextState = PlayerStates.Jumping;

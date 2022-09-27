@@ -58,7 +58,7 @@ namespace CaptainClaw.Scripts.Player
             // this gives the char a better jump interaction because most of the times people dont press the jump
             // button in the perfect right time to make the char jump again. 
             if (Time.time - _lastGroundedTime <= jumpGracePeriod || Time.time - _lastClimbTime <= jumpGracePeriod) {
-                _ySpeed = jumpForce;
+                _ySpeed += jumpForce;
 
                 _lastGroundedTime = null;
                 _jumpButtonPressedTime = null;
@@ -71,6 +71,10 @@ namespace CaptainClaw.Scripts.Player
             _velocity = direction * speed;
 
             _charController.Move(_velocity * Time.deltaTime);
+        }
+
+        public static void Launch(float launchForce) {
+            _ySpeed += launchForce;
         }
 
         // public static void PlatformMovement(Vector3 direction, float speed) {

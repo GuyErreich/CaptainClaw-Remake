@@ -14,6 +14,8 @@ namespace CaptainClaw.Scripts.Player
         [SerializeField] private float rotationSpeed = 2f;
         [SerializeField, Range(1f, 5f)] private float sprintMultiplier = 1.2f;
 
+        public float JumpForce { get => jumpForce; set => jumpForce =  value;}
+
         private DetectCollision detectCollision;
 
         private bool Climb { get => this.detectCollision.CompareTag("Ladder", DetectCollision.direction.front) && MovementHandler.climbAgain;}
@@ -44,7 +46,7 @@ namespace CaptainClaw.Scripts.Player
                 MovementHandler.Gravity();
                 MovementHandler.Rotate(this.transform, this.rotationSpeed);
 
-                yield return null;
+                yield return new WaitForEndOfFrame();
 
                 if (MovementHandler.isGrounded) {
                     nextState = PlayerStates.GroundMovement;
