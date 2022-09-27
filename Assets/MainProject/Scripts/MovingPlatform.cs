@@ -6,14 +6,11 @@ namespace CaptainClaw.Scripts {
     public class MovingPlatform : MonoBehaviour, ISerializationCallbackReceiver
     {
         [SerializeField] private Transform refPlatform;
-        [SerializeField] private Vector3 orientation = new Vector3(0f, 0f, 0f);
         [SerializeField] private Vector3 start = new Vector3(1f, 0f, 0f);
         [SerializeField] private Vector3 end = new Vector3(-1f, 0f, 0f);
         [SerializeField] private float smoothTime = 1f;
         [SerializeField] private float maxSpeed = 1f;
         [SerializeField] private float threshHold = 0.1f;
-
-        private Quaternion GetOrientation { get => Quaternion.Euler(orientation); }
 
         private Transform platform;
         private Vector3 startPoint;
