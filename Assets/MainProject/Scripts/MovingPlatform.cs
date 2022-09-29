@@ -53,7 +53,7 @@ namespace CaptainClaw.Scripts {
             this.endPoint = this.transform.position + this.end;
         }
 
-        private void OnDrawGizmosSelected() {
+        private void OnDrawGizmos() {
             // First point
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireCube(this.startPoint, refPlatform.localScale);

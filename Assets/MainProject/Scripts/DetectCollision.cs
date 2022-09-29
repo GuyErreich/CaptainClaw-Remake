@@ -5,11 +5,13 @@ namespace CaptainClaw.Scripts
     public class DetectCollision : MonoBehaviour {
         [System.Serializable] private struct Detector
         {
+            public float height;
             public float radius;
             public float range;
 
-            public Detector(float radius, float range)
+            public Detector(float height, float radius, float range)
             {
+                this.height = 0f;
                 this.radius = 0.5f;
                 this.range = 0.5f;
             }
@@ -17,32 +19,39 @@ namespace CaptainClaw.Scripts
 
         public enum direction {
             front = 0,
-            back = 1,
-            above = 2,
-            bottom = 3
+            bottom = 1,
+            frontFeet = 2
         }
 
         [Header("Detectors:")]
-        [SerializeField] private Detector FrontDetector = new Detector(0.5f, 0.5f);
-        [SerializeField] private Detector BottomDetector  = new Detector(0.5f, 0.5f);
+        [SerializeField] private Detector FrontDetector = new Detector(0f, 0.5f, 0.5f);
+        [SerializeField] private Detector BottomDetector  = new Detector(0f, 0.5f, 0.5f);
+        [SerializeField] private Detector FrontFeetDetector = new Detector(-0.5f, 0.5f, 0.5f);
 
         public Collider Front { get; private set; }
         public Collider Bottom { get; private set; }
+        public Collider FrontFeet { get; private set; }
 
         private void Update() {
-            RaycastHit hit;
-
             // Front detection
-            if (Physics.SphereCast(this.transform.position, this.FrontDetector.radius, this.transform.forward, out hit, this.FrontDetector.range))
-                this.Front = hit.collider;
-            else
-                this.Front = null;
+            this.Front = this.DetectedCollider(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range, this.transform.forward);
 
             // Bottom detection
-            if (Physics.SphereCast(this.transform.position, this.BottomDetector.radius, -this.transform.up, out hit, this.BottomDetector.range))
-                this.Bottom = hit.collider;
+            this.Bottom = this.DetectedCollider(this.BottomDetector.height, this.BottomDetector.radius, this.BottomDetector.range, -this.transform.up);
+
+            // Front feet detection
+            this.FrontFeet = this.DetectedCollider(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range, this.transform.forward);
+            
+        }
+
+        private Collider DetectedCollider(float height, float radius, float range, Vector3 direction) {
+            var origin = this.transform.position + (Vector3.up * height);
+
+            RaycastHit hit;
+            if (Physics.SphereCast(origin, radius, direction, out hit, range))
+                return hit.collider;
             else
-                this.Bottom = null;
+                return null;
         }
 
         public bool CompareTag(string tag, direction dir) {
@@ -50,24 +59,28 @@ namespace CaptainClaw.Scripts
                 return this.Front != null && this.Front.tag == tag;
             if (dir == direction.bottom)
                 return this.Bottom != null && this.Bottom.tag == tag;
+            if (dir == direction.frontFeet)
+                return this.FrontFeet != null && this.FrontFeet.tag == tag;
 
             throw new System.Exception("Unknown direction");
         } 
 
         void OnDrawGizmosSelected() {
             // Front detection
-            var frontRadius = this.FrontDetector.radius;
-            var frontRange = this.FrontDetector.range;
-
-            Gizmos.DrawLine(this.transform.position, this.transform.position + (this.transform.forward * (frontRange - frontRadius)));
-            Gizmos.DrawWireSphere(this.transform.position + (this.transform.forward * frontRange), frontRadius);
-
+            this.DrawDetector(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range, this.transform.forward);
+            
             // Bottom detection
-            var bottomRadius = this.BottomDetector.radius;
-            var bottomRange = this.BottomDetector.range;
+            this.DrawDetector(this.BottomDetector.height, this.BottomDetector.radius, this.BottomDetector.range, -this.transform.up);
 
-            Gizmos.DrawLine(this.transform.position, this.transform.position + (-this.transform.up * (bottomRange - bottomRadius)));
-            Gizmos.DrawWireSphere(this.transform.position + (-this.transform.up * bottomRange), bottomRadius);
+            // Front feet detection
+            this.DrawDetector(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range, this.transform.forward);
+        }
+
+        private void DrawDetector(float height, float radius, float range, Vector3 direction) {
+            var startPoint = this.transform.position + (Vector3.up * height);
+            var endPoint = startPoint + (direction * (range - radius));
+            Gizmos.DrawLine(startPoint, endPoint);
+            Gizmos.DrawWireSphere(startPoint + (direction * range), radius);
         }
 
     }

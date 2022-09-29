@@ -37,7 +37,9 @@ namespace CaptainClaw.Scripts.Player
                     break;
                 }
 
-                if (!this.detectCollision.CompareTag("Ladder", DetectCollision.direction.front)) {
+                if (!this.detectCollision.CompareTag("Ladder", DetectCollision.direction.front) &&
+                    !this.detectCollision.CompareTag("Ladder", DetectCollision.direction.frontFeet)) 
+                {
                     nextState = PlayerStates.GroundMovement;
                     break;
                 }

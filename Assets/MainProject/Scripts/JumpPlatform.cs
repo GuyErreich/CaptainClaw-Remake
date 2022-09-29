@@ -31,6 +31,18 @@ namespace CaptainClaw.Scripts {
             this.cached_characterController = null;
         }
 
+        // void OnControllerColliderHit(ControllerColliderHit hit)
+        // {
+        //     Debug.Log("onControllerColliderHit: " + hit);
+        //     // if (hit.collider.CompareTag("Player")) {
+        //     //     this.currentTime = Time.time;
+        //     //     if (this.currentTime - this.startTime >= this.launchDelay) {
+        //     //         MovementHandler.Launch(this.jumpForce * this.launchBoost);
+        //     //     }
+        //     // }
+        //     // else this.ResetDelay();
+        // }
+
         private void FixedUpdate() {
             var colliders = Physics.OverlapSphere(this.transform.position, this.colliderSize, layerMask, QueryTriggerInteraction.Collide);
 
@@ -39,8 +51,6 @@ namespace CaptainClaw.Scripts {
                 this.ResetDelay();
                 return;
             }
-                
-            print("start");
 
             this.currentTime = Time.time;
             if (this.currentTime - this.startTime < this.launchDelay) {
@@ -54,7 +64,6 @@ namespace CaptainClaw.Scripts {
                 }
             }
 
-
             if (this.cached_characterController) {
                 MovementHandler.Launch(this.jumpForce * this.launchBoost);
                 this.Cache_Reset();
@@ -62,12 +71,11 @@ namespace CaptainClaw.Scripts {
             }
         }
         
-        private void OnDrawGizmosSelected() {
+        private void OnDrawGizmos() {
             // The height of the launch
             var velocity = this.jumpForce * this.launchBoost;
             float timeToReachApexOfJump = velocity / -Physics.gravity.y;
             float heightOfJump = (0.5f * Physics.gravity.y * Mathf.Pow(timeToReachApexOfJump, 2f)) + (velocity * timeToReachApexOfJump);
-            // + (this.jumpForce * this.launchBoost * timeToReachApexOfJump);
             var startPosition = this.transform.position + (Vector3.up * this.transform.localScale.y / 2);
             var jumpPeak = startPosition + (Vector3.up * heightOfJump);
 
