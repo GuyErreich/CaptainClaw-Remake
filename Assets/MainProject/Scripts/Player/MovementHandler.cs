@@ -8,16 +8,16 @@ namespace CaptainClaw.Scripts.Player
         private static CharacterController _charController;
         private static Vector3 _velocity;
         private static float _ySpeed;
-        private static float? _lastGroundedTime, _jumpButtonPressedTime, _lastClimbTime;
-        private static float _climbGracePeriod;
+        private static float? _lastGroundedTime, _jumpButtonPressedTime, _lastClimbTime = null;
+        private static float _climbGracePeriod, _jumpGracePeriod;
         private static DetectCollision _detectCollision;
 
         public static bool isMoving { get; private set; } 
         public static bool isRunning { get; private set; } 
         public static bool isGrounded { get => _charController.isGrounded; }
-        public static bool jumpAgain { get; private set; } 
-        public static bool climbAgain { get => Time.time - _lastClimbTime >= _climbGracePeriod; } 
-
+        public static bool jumpAgain { get => Time.time - _jumpButtonPressedTime <= _jumpGracePeriod; } 
+        public static bool climbAgain { get => (_lastClimbTime == null) || (Time.time - _lastClimbTime >= _climbGracePeriod); }
+        
         private void Awake() {
             _charController = this.GetComponent<CharacterController>();
             _detectCollision = this.GetComponent<DetectCollision>();
@@ -51,14 +51,15 @@ namespace CaptainClaw.Scripts.Player
             if (InputReceiver.JumpPressed)
                 _jumpButtonPressedTime = Time.time;
 
-            //gives a little period while you are in the air 
-            jumpAgain = Time.time - _jumpButtonPressedTime <= jumpGracePeriod;
+            _jumpGracePeriod = jumpGracePeriod;
 
-            // The same as checking ground but gives a little preiod where it still considers you grounded.
-            // this gives the char a better jump interaction because most of the times people dont press the jump
+            // The same as checking ground but gives a little period where it still considers you grounded.
+            // this gives the char a better jump interaction because most of the times people don`t press the jump
             // button in the perfect right time to make the char jump again. 
-            if (Time.time - _lastGroundedTime <= jumpGracePeriod || Time.time - _lastClimbTime <= jumpGracePeriod) {
-                _ySpeed += jumpForce;
+            if (Time.time - _lastGroundedTime <= jumpGracePeriod || 
+                Time.time - _lastClimbTime <= jumpGracePeriod) 
+            {
+                _ySpeed = jumpForce;
 
                 _lastGroundedTime = null;
                 _jumpButtonPressedTime = null;
@@ -74,14 +75,9 @@ namespace CaptainClaw.Scripts.Player
         }
 
         public static void Launch(float launchForce) {
-            _ySpeed += launchForce;
+            _ySpeed = launchForce;
         }
-
-        // public static void PlatformMovement(Vector3 direction, float speed) {
-        //     _velocity = direction * speed;
-
-        //     _charController.Move(_velocity * Time.deltaTime);
-        // }
+        
         public static void SetParent(Transform parent) => _charController.transform.SetParent(parent);
     }
 }
