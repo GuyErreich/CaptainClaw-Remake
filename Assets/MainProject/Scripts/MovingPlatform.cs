@@ -11,26 +11,30 @@ namespace CaptainClaw.Scripts {
         [SerializeField] private float smoothTime = 1f;
         [SerializeField] private float maxSpeed = 1f;
         [SerializeField] private float threshHold = 0.1f;
+        [SerializeField, Min(0f)] private float delay;
 
         private Transform platform;
-        private Vector3 startPoint;
-        private Vector3 endPoint; 
-        public Vector3 velocity = Vector3.zero;
+        private Vector3 startPoint, endPoint;
+        private Quaternion rotation = Quaternion.identity;
+        private Vector3 velocity;
+        private float startTime, currentTime;
 
         private delegate void CurrentMovement();
         private CurrentMovement currentMovement;
 
         private void Start() {
             this.currentMovement = this.MoveForth;
-            this.SetPoints();
-            var direction = endPoint - startPoint;
-            var yRotation = Quaternion.FromToRotation(refPlatform.forward, direction).eulerAngles.y;
-            var rotation = Quaternion.Euler(0, yRotation, 0);
-            this.platform = Instantiate(refPlatform, this.startPoint, rotation, this.transform);
+            this.SetPointsAndRotation();
+            this.platform = Instantiate(refPlatform, this.startPoint, this.rotation, this.transform);
         }
 
         void Update()
         {
+            this.currentTime = Time.time;
+            if (this.currentTime - this.startTime < this.delay) {
+                return;
+            }
+
             currentMovement();
         }
 
@@ -48,22 +52,31 @@ namespace CaptainClaw.Scripts {
                 currentMovement = this.MoveForth;
         }
 
-        private void SetPoints() {
+        private void SetPointsAndRotation() {
             this.startPoint = this.transform.position + this.start; 
             this.endPoint = this.transform.position + this.end;
+
+            var direction = endPoint - startPoint;
+            var yRotation = Quaternion.FromToRotation(refPlatform.forward, direction).eulerAngles.y;
+            this.rotation = Quaternion.Euler(0, yRotation, 0);
         }
 
         private void OnDrawGizmos() {
             // First point
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(this.startPoint, refPlatform.localScale);
+            Gizmos.matrix = Matrix4x4.TRS(this.startPoint, this.rotation, this.transform.lossyScale);
+            
+            Gizmos.DrawWireCube(Vector3.zero, refPlatform.localScale);
+
+            Gizmos.matrix = Matrix4x4.identity;
+
             Gizmos.DrawLine(this.startPoint, this.endPoint);
             Gizmos.DrawWireSphere(this.endPoint, 0.5f); 
         }
 
         public void OnBeforeSerialize()
         {
-            this.SetPoints();
+            this.SetPointsAndRotation();
         }
 
         public void OnAfterDeserialize()

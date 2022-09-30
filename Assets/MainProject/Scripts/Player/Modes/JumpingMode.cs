@@ -9,7 +9,7 @@ namespace CaptainClaw.Scripts.Player
         [Header("Stats")]
         [SerializeField] private bool usePhysics = false;
         [SerializeField] private float jumpForce = 7f;
-        [SerializeField] private float jumpGracePeriod = 0.2f;
+        [SerializeField, Range(0f, 1f)] private float jumpGracePeriod = 0.2f;
         [SerializeField] private float speed = 2f;
         [SerializeField] private float rotationSpeed = 2f;
         [SerializeField, Range(1f, 5f)] private float sprintMultiplier = 1.2f;
