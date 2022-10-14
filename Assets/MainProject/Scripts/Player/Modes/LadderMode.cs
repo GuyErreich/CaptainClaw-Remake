@@ -33,8 +33,8 @@ namespace CaptainClaw.Scripts.Player
 
             while (true)
             {
-
-                var direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.up * InputReceiver.Movement.y);
+                // var direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.up * InputReceiver.Movement.y);
+                var direction = (this.transform.up * InputReceiver.Movement.y);
                 var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1);
                 finalSpeed *= this.speed;
                 MovementHandler.Climb(direction, finalSpeed, climbGracePeriod);
