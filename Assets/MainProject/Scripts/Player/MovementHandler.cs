@@ -42,9 +42,9 @@ namespace CaptainClaw.Scripts.Player
             }
         }
 
-        public static void Rotate(Transform self ,float rotationSpeed) {
-            float rotationAngle = Mathf.LerpAngle(self.eulerAngles.y, Camera.main.transform.eulerAngles.y, rotationSpeed * Time.deltaTime);
-            self.transform.eulerAngles = new Vector3(0f, rotationAngle, 0f);
+        public static void Rotate(float rotationSpeed) {
+            float rotationAngle = Mathf.LerpAngle(_charController.transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, rotationSpeed * Time.deltaTime);
+            _charController.transform.eulerAngles = new Vector3(0f, rotationAngle, 0f);
         }
 
         public static void Jump(float jumpForce, float jumpGracePeriod) {

@@ -44,7 +44,7 @@ namespace CaptainClaw.Scripts.Player
                 MovementHandler.Jump(this.jumpForce, this.jumpGracePeriod);
                 MovementHandler.Move(direction, finalSpeed);
                 MovementHandler.Gravity();
-                MovementHandler.Rotate(this.transform, this.rotationSpeed);
+                MovementHandler.Rotate(this.rotationSpeed);
 
                 yield return new WaitForEndOfFrame();
 

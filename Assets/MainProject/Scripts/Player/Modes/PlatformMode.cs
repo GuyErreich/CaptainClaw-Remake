@@ -27,7 +27,7 @@ namespace CaptainClaw.Scripts.Player
                 finalSpeed *= this.speed;
 
                 MovementHandler.Move(direction, finalSpeed);
-                MovementHandler.Rotate(this.transform, this.rotationSpeed);
+                MovementHandler.Rotate(this.rotationSpeed);
 
                 yield return new WaitForEndOfFrame();
 
