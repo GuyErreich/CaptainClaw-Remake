@@ -13,6 +13,9 @@ TagManager:
   - Jumpad
   - Treasure
   - Platform
+  - StaticPlatform
+  - VanishingPlatform
+  - DissolvingPlatforn
   layers:
   - Default
   - TransparentFX
