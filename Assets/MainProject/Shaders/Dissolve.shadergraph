@@ -23,9 +23,6 @@
         },
         {
             "m_Id": "0b698f744d1948159116381425d1614c"
-        },
-        {
-            "m_Id": "b56793fa4c0e424288801ac3d71e1e37"
         }
     ],
     "m_Keywords": [],
@@ -3277,33 +3274,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "b56793fa4c0e424288801ac3d71e1e37",
-    "m_Guid": {
-        "m_GuidSerialized": "783e3669-b918-40aa-8f6f-2e163eeeccfd"
-    },
-    "m_Name": "Height",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Height",
-    "m_DefaultReferenceName": "_Height",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "b59472f07d7447beb123efe7abbf11c2",
@@ -4458,9 +4428,6 @@
         },
         {
             "m_Id": "0b698f744d1948159116381425d1614c"
-        },
-        {
-            "m_Id": "b56793fa4c0e424288801ac3d71e1e37"
         }
     ]
 }

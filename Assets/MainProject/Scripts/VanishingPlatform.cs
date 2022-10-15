@@ -5,70 +5,72 @@ namespace CaptainClaw.Scripts {
     [RequireComponent(typeof(Material))]
     public class VanishingPlatform : MonoBehaviour
     {
-        [SerializeField, Min(0f)] private Material material;
 
-        [Header("Dissolve Stats")]
-        [SerializeField] private float minDissolveRatio = 0f;
-        [SerializeField] private float maxDissolveRatio = 1f;
-        [SerializeField, Min(0f)] private float dissolveTime = 3f;
+        [Header("Vanish Stats")]
+        [SerializeField, Min(0f)] private float vanishingTime = 3f;
+        [SerializeField, Min(0f)] private float materializingTime = 3f;
+        [SerializeField, Min(0f)] private float presenceTime = 3f;
         [SerializeField, Min(0f)] private float threshold = 0.02f;
+        [SerializeField, Min(0f)] private float delay;
 
-        [Header("Collider Stats")]
-        [SerializeField] private Vector3 center = Vector3.zero;
-        [SerializeField] private Vector3 scale = Vector3.one;
-        [SerializeField] private Vector3 rotation = Vector3.zero;
-        [SerializeField] private LayerMask layerMask;
 
-        private Vector2 cacheTile;
+        private Material material;
+        private delegate void CurrentTransition();
+        private CurrentTransition currentTransition;
+        // private Vector3 velocity;
+        private float startTime, presenceStartTime, time;
+        private new Collider collider;
 
-        private Quaternion Rotation { get => Quaternion.Euler(this.rotation); }
+        private void Awake() {
+            this.material = this.GetComponent<Renderer>().material;
+            this.collider = this.GetComponent<Collider>();
+        }
 
         private void Start() {
-            var tile_dir =  new Vector2(1f, 1f);
-            cacheTile = material.GetVector("_Dissolve_Tile_Direction");
-            material.SetVector("_Dissolve_Tile_Direction", tile_dir * Time.deltaTime / dissolveTime);
-            material.SetVector("_Dissolve_Tile_Direction", tile_dir * Time.deltaTime / dissolveTime);
-            material.SetFloat("_Dissolve_Strength", 0f);
+            this.currentTransition = this.Vanish;
+            this.startTime = Time.time;
         }
-
-        private bool once = false;
-        private void FixedUpdate() {
-            var colliders = Physics.OverlapBox(this.transform.TransformPoint(this.center), this.scale, this.transform.rotation, layerMask, QueryTriggerInteraction.Collide);
-
-            if (colliders.Length != 1)
+        
+        void Update()
+        {
+            if (Time.time - this.startTime < this.delay) {
                 return;
+            }
 
-            if (!this.once) {
-                StartCoroutine(this.Dissolve());
-                this.once = true;
+            currentTransition();
+        }
+
+        private void ResetTime() {
+            this.time = 0;
+        }
+
+        private void Vanish() {
+            if (Time.time - this.presenceStartTime < this.presenceTime) {
+                return;
+            }
+
+            var dissolvePercentage = Mathf.Lerp(0f, 1f, time / this.vanishingTime);
+            this.time += Time.deltaTime;
+            this.material.SetFloat("_Amount", dissolvePercentage);
+
+            if (dissolvePercentage > 1 - this.threshold) {
+                this.collider.enabled = false;
+                this.ResetTime();
+                this.currentTransition = this.Materialize;
             }
         }
 
-        private IEnumerator Dissolve() {
-            var t = 0f;
-            var dissolvePercentage = this.minDissolveRatio;
+        private void Materialize() {
+            var dissolvePercentage = Mathf.Lerp(1f, 0f, time / this.materializingTime);
+            this.time += Time.deltaTime;
+            this.material.SetFloat("_Amount", dissolvePercentage);
 
-            while (dissolvePercentage < this.maxDissolveRatio - this.threshold) {
-                dissolvePercentage = Mathf.Lerp(this.minDissolveRatio, this.maxDissolveRatio, t / this.dissolveTime);
-                t += Time.deltaTime;
-                this.material.SetFloat("_Dissolve_Strength", dissolvePercentage);
-
-                yield return new WaitForEndOfFrame();
+            if (dissolvePercentage < 0 + this.threshold) {
+                this.collider.enabled = true;
+                this.presenceStartTime = Time.time;
+                this.ResetTime();
+                this.currentTransition = this.Vanish;
             }
-
-            Destroy(this.gameObject);
-        }
-
-        private void OnDestroy() {
-            this.material.SetVector("_Dissolve_Tile_Direction", this.cacheTile);
-            this.material.SetFloat("_Dissolve_Strength", this.minDissolveRatio);
-        }
-
-        private void OnDrawGizmos() {
-            // The collider
-            Gizmos.matrix = Matrix4x4.TRS(this.transform.position, this.transform.rotation, this.transform.lossyScale);
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(this.center, this.scale); 
         }
     }
 }

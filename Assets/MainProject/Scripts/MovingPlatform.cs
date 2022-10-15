@@ -17,7 +17,7 @@ namespace CaptainClaw.Scripts {
         private Vector3 startPoint, endPoint;
         private Quaternion rotation = Quaternion.identity;
         private Vector3 velocity;
-        private float startTime, currentTime;
+        private float startTime;
 
         private delegate void CurrentMovement();
         private CurrentMovement currentMovement;
@@ -26,12 +26,12 @@ namespace CaptainClaw.Scripts {
             this.currentMovement = this.MoveForth;
             this.SetPointsAndRotation();
             this.platform = Instantiate(refPlatform, this.startPoint, this.rotation, this.transform);
+            this.startTime = Time.time;
         }
 
         void Update()
         {
-            this.currentTime = Time.time;
-            if (this.currentTime - this.startTime < this.delay) {
+            if (Time.time - this.startTime < this.delay) {
                 return;
             }
 

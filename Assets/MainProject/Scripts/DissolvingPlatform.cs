@@ -23,13 +23,12 @@ namespace CaptainClaw.Scripts {
 
         private Quaternion Rotation { get => Quaternion.Euler(this.rotation); }
 
-        private void Start() {
+        private void Awake() {
             this.material = this.GetComponent<Renderer>().material;
             this.cacheTile = this.material.GetVector("_Dissolve_Tile_Direction");
 
             this.material.SetVector("_Dissolve_Tile_Direction", this.cacheTile * Time.deltaTime / this.dissolveTime);
             this.material.SetVector("_Dissolve_Tile_Direction", this.cacheTile * Time.deltaTime / this.dissolveTime);
-            this.material.SetFloat("_Dissolve_Strength", 0f);
         }
 
         private bool once = false;
