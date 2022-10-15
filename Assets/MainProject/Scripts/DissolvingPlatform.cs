@@ -5,8 +5,6 @@ namespace CaptainClaw.Scripts {
     [RequireComponent(typeof(Material))]
     public class DissolvingPlatform : MonoBehaviour
     {
-        [SerializeField, Min(0f)] private Material material;
-
         [Header("Dissolve Stats")]
         [SerializeField] private float minDissolveRatio = 0f;
         [SerializeField] private float maxDissolveRatio = 1f;
@@ -19,16 +17,19 @@ namespace CaptainClaw.Scripts {
         [SerializeField] private Vector3 rotation = Vector3.zero;
         [SerializeField] private LayerMask layerMask;
 
+        
+        private Material material;
         private Vector2 cacheTile;
 
         private Quaternion Rotation { get => Quaternion.Euler(this.rotation); }
 
         private void Start() {
-            var tile_dir =  new Vector2(1f, 1f);
-            cacheTile = material.GetVector("_Dissolve_Tile_Direction");
-            material.SetVector("_Dissolve_Tile_Direction", tile_dir * Time.deltaTime / dissolveTime);
-            material.SetVector("_Dissolve_Tile_Direction", tile_dir * Time.deltaTime / dissolveTime);
-            material.SetFloat("_Dissolve_Strength", 0f);
+            this.material = this.GetComponent<Renderer>().material;
+            this.cacheTile = this.material.GetVector("_Dissolve_Tile_Direction");
+
+            this.material.SetVector("_Dissolve_Tile_Direction", this.cacheTile * Time.deltaTime / this.dissolveTime);
+            this.material.SetVector("_Dissolve_Tile_Direction", this.cacheTile * Time.deltaTime / this.dissolveTime);
+            this.material.SetFloat("_Dissolve_Strength", 0f);
         }
 
         private bool once = false;
@@ -56,7 +57,7 @@ namespace CaptainClaw.Scripts {
                 yield return new WaitForEndOfFrame();
             }
 
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
 
         private void OnDestroy() {
