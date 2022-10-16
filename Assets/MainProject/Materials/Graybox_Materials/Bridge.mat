@@ -105,7 +105,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve_Edge_Strength: 0.06
-    - _Dissolve_Strength: -0.2
+    - _Dissolve_Strength: -0.25
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
