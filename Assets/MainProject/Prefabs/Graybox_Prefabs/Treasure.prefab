@@ -209,8 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
---- !u!64 &7646367644305689479
-MeshCollider:
+--- !u!135 &2012993774912964102
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -219,10 +219,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3445387701381539837, guid: 21e618f5becb1b04592bf5535b3827da, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.77427006
+  m_Center: {x: 0.00046496093, y: 0.023871914, z: -0.027334813}
 --- !u!4 &6503921903377247920 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21e618f5becb1b04592bf5535b3827da, type: 3}
