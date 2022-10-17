@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4171479293371738037}
   - component: {fileID: 4565007612924247385}
   - component: {fileID: 5541252970882718400}
+  - component: {fileID: 2291822643807722005}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -130,8 +131,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 7
   launchBoost: 1.5
-  launchDelay: 3
-  colliderSize: 2
+  launchDelay: 0.7
+  colliderSize: 1.15
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!64 &2291822643807722005
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8713571930458711018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
