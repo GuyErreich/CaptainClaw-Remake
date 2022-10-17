@@ -19269,6 +19269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3706270855381271124, guid: 8babf4ea29cd2824e8ac287cc05f01cd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9643afc20ed6e224aa6faafbd5ec7ca9, type: 2}
     - target: {fileID: 5594182757158248730, guid: 8babf4ea29cd2824e8ac287cc05f01cd, type: 3}
       propertyPath: m_Name
       value: Treasure
