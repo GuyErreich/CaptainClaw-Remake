@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7925144382182253487}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,16 +110,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &434789360778407646
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1096235198202741573}
   m_Layer: 0
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,16 +230,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &439448799529926660
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 5324807456759564463}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -350,16 +350,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &2249989951577568893
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 677702061221346346}
   m_Layer: 0
   m_Name: Bridge
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 385873838116081930}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -512,16 +512,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &3073361606189243006
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 7767201009816347727}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -585,7 +585,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -632,16 +632,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &3817644732256041663
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 6720396253125552152}
   m_Layer: 0
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -706,7 +706,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -753,16 +753,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &6720396253125552152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 2079244921816117806}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -848,7 +848,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -895,16 +895,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &7497802524271999827
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 6111397550397524138}
   m_Layer: 0
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -968,7 +968,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1015,16 +1015,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &8107050868579011831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 90786865606944962}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1088,7 +1088,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1135,16 +1135,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &8614871519241954968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 280086717897272790}
   m_Layer: 0
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1208,7 +1208,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1255,16 +1255,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &8655135281106864028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 510024627202431732}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: DissolvingPlatforn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1328,7 +1328,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e46764ec1fe3a143b8ee153ed36e51d, type: 2}
+  - {fileID: 2100000, guid: 4d92a594afe8d6c478a7f7d98dad41f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1375,13 +1375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f72e29ebae41dc4eb8c0f89afcb03da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  minDissolveRatio: -0.25
+  maxDissolveRatio: 1.62
+  dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0}
   scale: {x: 1, y: 1, z: 1}
   rotation: {x: 0, y: 0, z: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64

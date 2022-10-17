@@ -130,8 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 7
   launchBoost: 1.5
-  launchDelay: 3
-  colliderSize: 2
+  launchDelay: 0.7
+  colliderSize: 1.15
   layerMask:
     serializedVersion: 2
     m_Bits: 64
