@@ -12,7 +12,9 @@ namespace CaptainClaw.Scripts {
         [SerializeField] private float launchDelay = 3f;
 
         [Header("Collider Stats")]
-        [SerializeField] private float colliderSize = 2f;
+        [SerializeField] private float scale = 2f;
+        [SerializeField] private Vector3 center = Vector3.zero;
+
         [SerializeField] private LayerMask layerMask;
 
         private float startTime;
@@ -44,7 +46,7 @@ namespace CaptainClaw.Scripts {
         // }
 
         private void FixedUpdate() {
-            var colliders = Physics.OverlapSphere(this.transform.position, this.colliderSize, layerMask, QueryTriggerInteraction.Collide);
+            var colliders = Physics.OverlapSphere(this.transform.TransformPoint(this.center), this.scale, layerMask, QueryTriggerInteraction.Collide);
 
             if (colliders.Length != 1) {
                 this.Cache_Reset();
@@ -85,7 +87,7 @@ namespace CaptainClaw.Scripts {
 
             // The collider
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(this.transform.position, this.colliderSize); 
+            Gizmos.DrawWireSphere(this.transform.TransformPoint(this.center), this.scale); 
         }
     }
 }

@@ -14,14 +14,11 @@ namespace CaptainClaw.Scripts {
         [Header("Collider Stats")]
         [SerializeField] private Vector3 center = Vector3.zero;
         [SerializeField] private Vector3 scale = Vector3.one;
-        [SerializeField] private Vector3 rotation = Vector3.zero;
         [SerializeField] private LayerMask layerMask;
 
         
         private Material material;
         private Vector2 cacheTile;
-
-        private Quaternion Rotation { get => Quaternion.Euler(this.rotation); }
 
         private void Awake() {
             this.material = this.GetComponent<Renderer>().material;
