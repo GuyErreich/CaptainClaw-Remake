@@ -20,13 +20,14 @@ namespace CaptainClaw.Scripts.Player
             PlayerStates nextState;
             
             if (this.detectCollision.CompareTag("Ladder", DetectCollision.direction.front)) {
-                var positionRelativeToLadder = Vector3.Dot(this.transform.forward, this.detectCollision.Front.transform.forward) < 0 ? -1f : 1f; // Is it behind the ladder or in front of it
-                this.transform.rotation = Quaternion.LookRotation(this.detectCollision.Front.transform.forward * positionRelativeToLadder, this.transform.up);
+                var positionRelativeToLadder = Vector3.Dot(this.transform.forward, this.detectCollision.Front.Value.collider.transform.forward) < 0 ? -1f : 1f; // Is it behind the ladder or in front of it
+                this.transform.rotation = Quaternion.LookRotation(this.detectCollision.Front.Value.collider.transform.forward * positionRelativeToLadder, this.transform.up);
 
                 if (InputReceiver.Movement.y > 0f) {
-                    this.transform.localPosition = new Vector3(this.transform.localPosition.x,
-                                                                this.transform.localPosition.y,
-                                                                this.transform.localPosition.z + positionCorrectionOffset * positionRelativeToLadder);
+                    var distance = this.detectCollision.GetRange(DetectCollision.direction.front);
+                    var normal = this.detectCollision.Front.Value.normal;
+                    var hitDistance = this.detectCollision.Front.Value.distance;
+                    MovementHandler.Move(this.detectCollision.Front.Value.normal, -(distance - (distance - hitDistance)) / Time.deltaTime);
                 } 
             }
 

@@ -28,9 +28,9 @@ namespace CaptainClaw.Scripts
         [SerializeField] private Detector BottomDetector  = new Detector(0f, 0.5f, 0.5f);
         [SerializeField] private Detector FrontFeetDetector = new Detector(-0.5f, 0.5f, 0.5f);
 
-        public Collider Front { get; private set; }
-        public Collider Bottom { get; private set; }
-        public Collider FrontFeet { get; private set; }
+        public RaycastHit? Front { get; private set; }
+        public RaycastHit? Bottom { get; private set; }
+        public RaycastHit? FrontFeet { get; private set; }
 
         private void Update() {
             // Front detection
@@ -44,23 +44,34 @@ namespace CaptainClaw.Scripts
             
         }
 
-        private Collider DetectedCollider(float height, float radius, float range, Vector3 direction) {
+        private RaycastHit? DetectedCollider(float height, float radius, float range, Vector3 direction) {
             var origin = this.transform.position + (Vector3.up * height);
 
             RaycastHit hit;
             if (Physics.SphereCast(origin, radius, direction, out hit, range))
-                return hit.collider;
+                return hit;
             else
                 return null;
         }
 
+        public float GetRange(direction dir) {
+            if (dir == direction.front)
+                return this.FrontDetector.range;
+            if (dir == direction.bottom)
+                return this.BottomDetector.range;
+            if (dir == direction.frontFeet)
+                return this.FrontFeetDetector.range;
+
+            throw new System.Exception("Unknown direction");
+        }
+
         public bool CompareTag(string tag, direction dir) {
             if (dir == direction.front)
-                return this.Front != null && this.Front.tag == tag;
+                return this.Front != null && this.Front.Value.collider.tag == tag;
             if (dir == direction.bottom)
-                return this.Bottom != null && this.Bottom.tag == tag;
+                return this.Bottom != null && this.Bottom.Value.collider.tag == tag;
             if (dir == direction.frontFeet)
-                return this.FrontFeet != null && this.FrontFeet.tag == tag;
+                return this.FrontFeet != null && this.FrontFeet.Value.collider.tag == tag;
 
             throw new System.Exception("Unknown direction");
         } 

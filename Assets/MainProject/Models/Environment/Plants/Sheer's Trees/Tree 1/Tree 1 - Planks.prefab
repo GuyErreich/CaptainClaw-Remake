@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 6273582434627666671}
   - component: {fileID: 626094152948581039}
   - component: {fileID: 6711536358409807584}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trunkT1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

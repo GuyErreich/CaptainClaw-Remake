@@ -14,7 +14,7 @@ public class HandleCollision : MonoBehaviour {
         this.distance = this.controller.radius + radius;
     }
  
-    public void FixedwUpdate(){
+    public void Update(){
         RaycastHit hit;
  
         //Bottom of controller. Slightly above ground so it doesn't bump into slanted platforms. (Adjust to your needs)

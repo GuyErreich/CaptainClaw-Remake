@@ -1271,6 +1271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: trunkT2
       objectReference: {fileID: 0}
+    - target: {fileID: 4179739265108936189, guid: c52fa213c6f889d459ce5b8ab8d2a8bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c52fa213c6f889d459ce5b8ab8d2a8bb, type: 3}
 --- !u!4 &8366570244155222066 stripped

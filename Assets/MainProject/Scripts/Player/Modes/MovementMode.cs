@@ -44,7 +44,7 @@ namespace CaptainClaw.Scripts.Player
                 }
 
                 if(this.detectCollision.CompareTag("Platform", DetectCollision.direction.bottom)) {
-                    MovementHandler.SetParent(this.detectCollision.Bottom.transform);
+                    MovementHandler.SetParent(this.detectCollision.Bottom.Value.transform);
                     nextState = PlayerStates.PlatformMovement;
                     break;
                 }
