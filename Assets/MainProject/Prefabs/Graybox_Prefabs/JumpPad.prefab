@@ -132,7 +132,8 @@ MonoBehaviour:
   jumpForce: 7
   launchBoost: 1.5
   launchDelay: 0.7
-  colliderSize: 1.15
+  scale: 1
+  center: {x: 0, y: 1, z: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 64

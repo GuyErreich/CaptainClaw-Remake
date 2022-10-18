@@ -142,14 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc6c7c73666fe3441afa4b6b3bb1a935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  minDissolveRatio: 0
-  maxDissolveRatio: 1
-  dissolveTime: 3
+  vanishingTime: 1.4
+  materializingTime: 2
+  presenceTime: 2
   threshold: 0.02
-  center: {x: 0, y: 0, z: 0}
-  scale: {x: 1, y: 1, z: 1}
-  rotation: {x: 0, y: 0, z: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  delay: 0
