@@ -32,7 +32,7 @@ namespace CaptainClaw.Scripts
         public Collider Bottom { get; private set; }
         public Collider FrontFeet { get; private set; }
 
-        private void FixedUpdate() {
+        private void Update() {
             // Front detection
             this.Front = this.DetectedCollider(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range, this.transform.forward);
             
