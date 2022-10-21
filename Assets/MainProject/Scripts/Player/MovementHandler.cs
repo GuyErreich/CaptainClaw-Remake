@@ -17,10 +17,17 @@ namespace CaptainClaw.Scripts.Player
         public static bool isGrounded { get => _charController.isGrounded; }
         public static bool jumpAgain { get => Time.time - _jumpButtonPressedTime <= _jumpGracePeriod; } 
         public static bool climbAgain { get => (_lastClimbTime == null) || (Time.time - _lastClimbTime >= _climbGracePeriod); }
+        public static Vector3 Direction { get; private set;}
         
         private void Awake() {
             _charController = this.GetComponent<CharacterController>();
             _detectCollision = this.GetComponent<DetectCollision>();
+        }
+
+        private void Update() {
+            if (InputReceiver.Movement != Vector2.zero)
+                Direction = _charController.velocity.normalized;
+                // Direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.forward * InputReceiver.Movement.y);
         }
 
         public static void Move(Vector3 direction, float speed) {
@@ -42,9 +49,13 @@ namespace CaptainClaw.Scripts.Player
             }
         }
 
-        public static void Rotate(float rotationSpeed) {
-            float rotationAngle = Mathf.LerpAngle(_charController.transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, rotationSpeed * Time.deltaTime);
-            _charController.transform.eulerAngles = new Vector3(0f, rotationAngle, 0f);
+        public static void Rotate(float rotationTime) {
+            if(InputReceiver.Movement.x != 0f || InputReceiver.Movement.y != 0f)
+            {
+                float rotationAngle = Mathf.LerpAngle(_charController.transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, Time.deltaTime / rotationTime);
+                // float rotationAngle = Mathf.LerpAngle(_charController.transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, Time.deltaTime / rotationTime);
+                _charController.transform.eulerAngles = new Vector3(0f, rotationAngle, 0f);
+            }
         }
 
         public static void Jump(float jumpForce, float jumpGracePeriod) {

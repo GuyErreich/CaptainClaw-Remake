@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: ef65e797f24846845a944adc5fd0b172
+guid: bf47d8f776131fb4bb62320b8f0fd6ed
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Jumping
+    second: Walking Backward
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -40,14 +40,14 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jumping
+      name: Walking Backward
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 45
-      lastFrame: 47
+      firstFrame: 0
+      lastFrame: 62
       wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
+      orientationOffsetY: 180
+      level: 0.45
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0

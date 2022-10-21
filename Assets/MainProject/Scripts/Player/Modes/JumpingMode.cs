@@ -36,7 +36,7 @@ namespace CaptainClaw.Scripts.Player
             while (true)
             {
                 if (!this.usePhysics) {
-                    direction = (Camera.main.transform.right * InputReceiver.Movement.x) + (Camera.main.transform.forward * InputReceiver.Movement.y);
+                    direction = (Camera.main.transform.right * InputReceiver.SmoothMovement.x) + (Camera.main.transform.forward * InputReceiver.SmoothMovement.y);
                     finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1f);
                     finalSpeed *= this.speed;
                 }
@@ -45,6 +45,9 @@ namespace CaptainClaw.Scripts.Player
                 MovementHandler.Move(direction, finalSpeed);
                 MovementHandler.Gravity();
                 MovementHandler.Rotate(this.rotationSpeed);
+
+                AnimationHandler.Move();
+                AnimationHandler.Jump(true);
 
                 yield return new WaitForEndOfFrame();
 
@@ -58,6 +61,8 @@ namespace CaptainClaw.Scripts.Player
                     break;
                 }
             }
+
+            AnimationHandler.Jump(false);
 
             base.ChangeState(nextState);
         }

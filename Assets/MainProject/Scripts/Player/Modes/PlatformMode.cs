@@ -23,12 +23,14 @@ namespace CaptainClaw.Scripts.Player
             while (true)
             {
                 // var direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.forward * InputReceiver.Movement.y);
-                var direction = (Camera.main.transform.right * InputReceiver.Movement.x) + (Camera.main.transform.forward * InputReceiver.Movement.y);
+                var direction = (Camera.main.transform.right * InputReceiver.SmoothMovement.x) + (Camera.main.transform.forward * InputReceiver.SmoothMovement.y);
                 var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1f);
                 finalSpeed *= this.speed;
 
                 MovementHandler.Move(direction, finalSpeed);
                 MovementHandler.Rotate(this.rotationSpeed);
+
+                AnimationHandler.Move();
 
                 yield return new WaitForEndOfFrame();
 

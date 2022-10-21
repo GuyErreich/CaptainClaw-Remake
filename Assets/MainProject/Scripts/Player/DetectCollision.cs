@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CaptainClaw.Scripts
+namespace CaptainClaw.Scripts.Player
 {
     public class DetectCollision : MonoBehaviour {
         [System.Serializable] private struct Detector
@@ -23,6 +23,9 @@ namespace CaptainClaw.Scripts
             frontFeet = 2
         }
 
+        [Header("Stats:")]
+        [SerializeField] private int precision = 10;
+
         [Header("Detectors:")]
         [SerializeField] private Detector FrontDetector = new Detector(0f, 0.5f, 0.5f);
         [SerializeField] private Detector BottomDetector  = new Detector(0f, 0.5f, 0.5f);
@@ -34,13 +37,13 @@ namespace CaptainClaw.Scripts
 
         private void Update() {
             // Front detection
-            this.Front = this.DetectedCollider(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range, this.transform.forward);
+            this.Front = this.DetectedCollider360(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range);
             
             // Bottom detection
             this.Bottom = this.DetectedCollider(this.BottomDetector.height, this.BottomDetector.radius, this.BottomDetector.range, -this.transform.up);
 
             // Front feet detection
-            this.FrontFeet = this.DetectedCollider(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range, this.transform.forward);
+            this.FrontFeet = this.DetectedCollider360(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range);
             
         }
 
@@ -53,6 +56,21 @@ namespace CaptainClaw.Scripts
             else
                 return null;
         }
+        
+        private RaycastHit? DetectedCollider360(float height, float radius, float range) {
+            var origin = this.transform.position + (Vector3.up * height);
+
+            RaycastHit hit;
+            //Check around the character in a 360, 10 times (increase if more accuracy is needed)
+            for (int i = 0; i < 360; i += (360 / this.precision)) {
+                var direction = new Vector3(Mathf.Cos(i), 0, Mathf.Sin(i));
+                //Check if anything with the platform layer touches this object
+                if (Physics.SphereCast(origin, radius, direction, out hit, range))
+                    return hit;
+            }
+            
+            return null;
+        }        
 
         public float GetRange(direction dir) {
             if (dir == direction.front)
@@ -78,20 +96,33 @@ namespace CaptainClaw.Scripts
 
         void OnDrawGizmosSelected() {
             // Front detection
-            this.DrawDetector(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range, this.transform.forward);
+            this.DrawDetector360(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range);
             
             // Bottom detection
             this.DrawDetector(this.BottomDetector.height, this.BottomDetector.radius, this.BottomDetector.range, -this.transform.up);
 
             // Front feet detection
-            this.DrawDetector(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range, this.transform.forward);
+            this.DrawDetector360(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range);
         }
+
 
         private void DrawDetector(float height, float radius, float range, Vector3 direction) {
             var startPoint = this.transform.position + (Vector3.up * height);
             var endPoint = startPoint + (direction * (range - radius));
             Gizmos.DrawLine(startPoint, endPoint);
             Gizmos.DrawWireSphere(startPoint + (direction * range), radius);
+        }
+
+        private void DrawDetector360(float height, float radius, float range) {
+            var startPoint = this.transform.position + (Vector3.up * height);
+            
+            //Check around the character in a 360, 10 times (increase if more accuracy is needed)
+            for (int i = 0; i < 360; i += (360 / this.precision)) {
+                var direction = new Vector3(Mathf.Cos(i), 0, Mathf.Sin(i));
+                var endPoint = startPoint + (direction * (range - radius));
+                Gizmos.DrawLine(startPoint, endPoint);
+                Gizmos.DrawWireSphere(startPoint + (direction * range), radius);
+            }
         }
 
     }
