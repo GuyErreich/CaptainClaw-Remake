@@ -34,8 +34,8 @@ namespace CaptainClaw.Scripts.Player
 
             while (true)
             {
-                // var direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.up * InputReceiver.Movement.y);
-                // Vector3.Dot(this.detectCollision.Front.Value.collider.transform.forward, )
+                // var side = Vector3.Dot(this.detectCollision.Front.Value.collider.transform.forward, MovementHandler.Direction);
+                // var input = Mathf.Lerp(InputReceiver.SmoothMovement.x, InputReceiver.SmoothMovement.y, side);
                 var direction = (this.transform.up * InputReceiver.SmoothMovement.y);
                 var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1);
                 finalSpeed *= this.speed;

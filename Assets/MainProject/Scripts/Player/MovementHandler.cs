@@ -17,6 +17,15 @@ namespace CaptainClaw.Scripts.Player
         public static bool isGrounded { get => _charController.isGrounded; }
         public static bool jumpAgain { get => Time.time - _jumpButtonPressedTime <= _jumpGracePeriod; } 
         public static bool climbAgain { get => (_lastClimbTime == null) || (Time.time - _lastClimbTime >= _climbGracePeriod); }
+        public static Vector3 Direction { 
+            get {
+                var X = (Camera.main.transform.right.normalized * InputReceiver.Movement.x);
+                var Z = (Camera.main.transform.forward.normalized * InputReceiver.Movement.y);
+                var directionXZ = Vector3.Scale(X + Z, new Vector3(1,0,1));
+
+                return directionXZ;
+            }
+        }
         
         private void Awake() {
             _charController = this.GetComponent<CharacterController>();
@@ -45,12 +54,7 @@ namespace CaptainClaw.Scripts.Player
         public static void Rotate(float rotationTime) {
             if(InputReceiver.Movement != Vector2.zero)
             {
-                var X = (Camera.main.transform.right.normalized * InputReceiver.Movement.x);
-                var Z = (Camera.main.transform.forward.normalized * InputReceiver.Movement.y);
-                var directionXZ = Vector3.Scale(X + Z, new Vector3(1,0,1));
-                // var directionXZ = X + Z;
-
-                Quaternion toRotation = Quaternion.LookRotation(directionXZ, Vector3.up);
+                Quaternion toRotation = Quaternion.LookRotation(Direction, Vector3.up);
 
                 var angle = Quaternion.Angle(_charController.transform.rotation, toRotation);
 
