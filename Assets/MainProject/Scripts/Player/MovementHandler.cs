@@ -17,17 +17,10 @@ namespace CaptainClaw.Scripts.Player
         public static bool isGrounded { get => _charController.isGrounded; }
         public static bool jumpAgain { get => Time.time - _jumpButtonPressedTime <= _jumpGracePeriod; } 
         public static bool climbAgain { get => (_lastClimbTime == null) || (Time.time - _lastClimbTime >= _climbGracePeriod); }
-        public static Vector3 Direction { get; private set;}
         
         private void Awake() {
             _charController = this.GetComponent<CharacterController>();
             _detectCollision = this.GetComponent<DetectCollision>();
-        }
-
-        private void Update() {
-            if (InputReceiver.Movement != Vector2.zero)
-                Direction = _charController.velocity.normalized;
-                // Direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.forward * InputReceiver.Movement.y);
         }
 
         public static void Move(Vector3 direction, float speed) {
@@ -50,11 +43,18 @@ namespace CaptainClaw.Scripts.Player
         }
 
         public static void Rotate(float rotationTime) {
-            if(InputReceiver.Movement.x != 0f || InputReceiver.Movement.y != 0f)
+            if(InputReceiver.Movement != Vector2.zero)
             {
-                float rotationAngle = Mathf.LerpAngle(_charController.transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, Time.deltaTime / rotationTime);
-                // float rotationAngle = Mathf.LerpAngle(_charController.transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, Time.deltaTime / rotationTime);
-                _charController.transform.eulerAngles = new Vector3(0f, rotationAngle, 0f);
+                var X = (Camera.main.transform.right.normalized * InputReceiver.Movement.x);
+                var Z = (Camera.main.transform.forward.normalized * InputReceiver.Movement.y);
+                var directionXZ = Vector3.Scale(X + Z, new Vector3(1,0,1));
+                // var directionXZ = X + Z;
+
+                Quaternion toRotation = Quaternion.LookRotation(directionXZ, Vector3.up);
+
+                var angle = Quaternion.Angle(_charController.transform.rotation, toRotation);
+
+                _charController.transform.rotation = Quaternion.RotateTowards(_charController.transform.rotation, toRotation, angle / (rotationTime / Time.deltaTime));
             }
         }
 

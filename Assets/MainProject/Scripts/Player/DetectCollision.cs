@@ -37,13 +37,13 @@ namespace CaptainClaw.Scripts.Player
 
         private void Update() {
             // Front detection
-            this.Front = this.DetectedCollider360(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range);
+            this.Front = this.DetectedCollider(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range, this.transform.forward);
             
             // Bottom detection
             this.Bottom = this.DetectedCollider(this.BottomDetector.height, this.BottomDetector.radius, this.BottomDetector.range, -this.transform.up);
 
             // Front feet detection
-            this.FrontFeet = this.DetectedCollider360(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range);
+            this.FrontFeet = this.DetectedCollider(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range, this.transform.forward);
             
         }
 
@@ -96,13 +96,13 @@ namespace CaptainClaw.Scripts.Player
 
         void OnDrawGizmosSelected() {
             // Front detection
-            this.DrawDetector360(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range);
+            this.DrawDetector(this.FrontDetector.height, this.FrontDetector.radius, this.FrontDetector.range, this.transform.forward);
             
             // Bottom detection
             this.DrawDetector(this.BottomDetector.height, this.BottomDetector.radius, this.BottomDetector.range, -this.transform.up);
 
             // Front feet detection
-            this.DrawDetector360(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range);
+            this.DrawDetector(this.FrontFeetDetector.height, this.FrontFeetDetector.radius, this.FrontFeetDetector.range, this.transform.forward);
         }
 
 
