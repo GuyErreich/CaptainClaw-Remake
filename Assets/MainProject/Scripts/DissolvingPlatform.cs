@@ -63,7 +63,8 @@ namespace CaptainClaw.Scripts {
 
         private void OnDrawGizmos() {
             // The collider
-            Gizmos.matrix = Matrix4x4.TRS(this.transform.position, this.transform.rotation, this.transform.lossyScale);
+            // Gizmos.matrix = Matrix4x4.TRS(this.transform.position, this.transform.rotation, this.transform.lossyScale);
+            Gizmos.matrix = transform.localToWorldMatrix;
             Gizmos.color = Color.green;
             Gizmos.DrawWireCube(this.center, this.scale); 
         }
