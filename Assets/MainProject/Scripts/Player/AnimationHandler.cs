@@ -11,6 +11,7 @@ namespace CaptainClaw.Scripts.Player
         private static int id_movementY = Animator.StringToHash("movementY");
         private static int id_isJumping = Animator.StringToHash("isJumping");
         private static int id_isMoving = Animator.StringToHash("isMoving");
+        private static int id_isClimbing = Animator.StringToHash("isClimbing");
         #endregion Anim Hashes
 
         public static void Move() {
@@ -21,6 +22,18 @@ namespace CaptainClaw.Scripts.Player
 
             
             _anim.SetFloat(id_movementX, InputReceiver.SmoothMovement.x);
+            _anim.SetFloat(id_movementY, InputReceiver.SmoothMovement.y);
+        }
+
+        public static void Climb(bool isClimbing) {
+            if(!isClimbing) {
+                _anim.SetBool(id_isClimbing, false);
+                _anim.speed = 1f;
+                return;
+            }
+
+            _anim.SetBool(id_isClimbing, true);
+            _anim.speed = Mathf.Abs(InputReceiver.SmoothMovement.y);
             _anim.SetFloat(id_movementY, InputReceiver.SmoothMovement.y);
         }
 

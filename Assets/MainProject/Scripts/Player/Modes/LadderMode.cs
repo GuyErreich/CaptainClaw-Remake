@@ -40,6 +40,7 @@ namespace CaptainClaw.Scripts.Player
                 var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1);
                 finalSpeed *= this.speed;
                 MovementHandler.Climb(direction, finalSpeed, climbGracePeriod);
+                AnimationHandler.Climb(true);
 
                 yield return new WaitForEndOfFrame();
 
@@ -60,6 +61,8 @@ namespace CaptainClaw.Scripts.Player
                     break;
                 }
             }
+
+            AnimationHandler.Climb(false);
 
             base.ChangeState(nextState);
         }
