@@ -3,15 +3,11 @@ using System.Collections;
 
 namespace CaptainClaw.Scripts.Player
 {
+    [RequireComponent(typeof(PlayerStats))]
     [RequireComponent(typeof(MovementHandler))]
     [RequireComponent(typeof(AnimationHandler))]
     [RequireComponent(typeof(DetectCollision))]
     public class MovementMode : PlayerState {
-        [Header("Stats")]
-        [SerializeField] private float speed = 7f;
-        [SerializeField] private float rotationSpeed = 2f;
-        [SerializeField, Range(1f, 5f)] private float sprintMultiplier = 1.5f;
-
         private bool Jump { get => InputReceiver.JumpPressed || MovementHandler.jumpAgain;}
 
         private DetectCollision detectCollision;
@@ -23,16 +19,17 @@ namespace CaptainClaw.Scripts.Player
             
             while (true)
             {
-                // var direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.forward * InputReceiver.Movement.y);
-                var direction = (Camera.main.transform.right * InputReceiver.SmoothMovement.x) + (Camera.main.transform.forward * InputReceiver.SmoothMovement.y);
-                var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1f);
-                finalSpeed *= this.speed;
-
+                var direction = (Camera.main.transform.right * InputReceiver.SmoothMovement.x) + 
+                                (Camera.main.transform.forward * InputReceiver.SmoothMovement.y);
+                var finalSpeed = (InputReceiver.RunPressed ? PlayerStats.SprintMultiplier : 1f);
+                finalSpeed *= PlayerStats.Speed;
                 MovementHandler.Move(direction, finalSpeed);
                 MovementHandler.Gravity();
-                MovementHandler.Rotate(this.rotationSpeed);
+                MovementHandler.Rotate(PlayerStats.RotationSpeed);
                 
                 AnimationHandler.Move();
+                AnimationHandler.Grounded(MovementHandler.isGrounded);
+                AnimationHandler.Velocity(MovementHandler.Velocity);
 
                 yield return new WaitForEndOfFrame();
 
@@ -47,10 +44,11 @@ namespace CaptainClaw.Scripts.Player
                 }
 
                 if(this.detectCollision.CompareTag("Platform", DetectCollision.direction.bottom)) {
-                    MovementHandler.SetParent(this.detectCollision.Bottom.Value.transform);
+                    this.transform.parent = this.detectCollision.Bottom.Value.transform;
                     nextState = PlayerStates.PlatformMovement;
                     break;
                 }
+
             }
 
             base.ChangeState(nextState);

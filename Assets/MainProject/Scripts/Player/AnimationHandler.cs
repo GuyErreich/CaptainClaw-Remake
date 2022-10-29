@@ -4,7 +4,9 @@ namespace CaptainClaw.Scripts.Player
 {
     public class AnimationHandler : MonoBehaviour, ISerializationCallbackReceiver {
         [SerializeField] private Animator anim;
-        [SerializeField] private static Animator _anim;
+        
+        private static Animator _anim;
+        private static CharacterController _charController;
 
         #region Anim Hashes
         private static int id_movementX = Animator.StringToHash("movementX");
@@ -12,6 +14,8 @@ namespace CaptainClaw.Scripts.Player
         private static int id_isJumping = Animator.StringToHash("isJumping");
         private static int id_isMoving = Animator.StringToHash("isMoving");
         private static int id_isClimbing = Animator.StringToHash("isClimbing");
+        private static int id_isGrounded = Animator.StringToHash("isGrounded");
+        private static int id_velocityY = Animator.StringToHash("velocityY");
         #endregion Anim Hashes
 
         public static void Move() {
@@ -39,6 +43,14 @@ namespace CaptainClaw.Scripts.Player
 
         public static void Jump(bool isJumping) {
             _anim.SetBool(id_isJumping, isJumping);
+        }
+
+        public static void Grounded(bool isGrounded) {
+            _anim.SetBool(id_isGrounded, isGrounded);
+        }
+
+        public static void Velocity(Vector3 velocity) {
+            _anim.SetFloat(id_velocityY, velocity.y);
         }
 
         public void OnBeforeSerialize()

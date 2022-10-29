@@ -3,20 +3,26 @@ using UnityEngine;
 namespace CaptainClaw.Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(DetectCollision))]
+    // [RequireComponent(typeof(DetectCollision))]
     public class MovementHandler : MonoBehaviour {
+        #region Private Variables
         private static CharacterController _charController;
         private static Vector3 _velocity;
         private static float _ySpeed;
         private static float? _lastGroundedTime, _jumpButtonPressedTime, _lastClimbTime = null;
         private static float _climbGracePeriod, _jumpGracePeriod;
         private static DetectCollision _detectCollision;
+        #endregion Private Variables
 
+        #region Getters/Setters
+        public static bool UsePhysics { get; private set; }
         public static bool isMoving { get; private set; } 
         public static bool isRunning { get; private set; } 
-        public static bool isGrounded { get => _charController.isGrounded; }
+        public static Vector3 Velocity { get => _velocity; } 
+        public static bool isGrounded { get => _detectCollision.Bottom != null; }
         public static bool jumpAgain { get => Time.time - _jumpButtonPressedTime <= _jumpGracePeriod; } 
         public static bool climbAgain { get => (_lastClimbTime == null) || (Time.time - _lastClimbTime >= _climbGracePeriod); }
+
         public static Vector3 Direction { 
             get {
                 var X = (Camera.main.transform.right.normalized * InputReceiver.Movement.x);
@@ -26,6 +32,7 @@ namespace CaptainClaw.Scripts.Player
                 return directionXZ;
             }
         }
+        #endregion Getters/Setters
         
         private void Awake() {
             _charController = this.GetComponent<CharacterController>();
@@ -92,7 +99,5 @@ namespace CaptainClaw.Scripts.Player
         public static void Launch(float launchForce) {
             _ySpeed = launchForce;
         }
-        
-        public static void SetParent(Transform parent) => _charController.transform.SetParent(parent);
     }
 }

@@ -3,15 +3,10 @@ using System.Collections;
 
 namespace CaptainClaw.Scripts.Player
 {
+    [RequireComponent(typeof(PlayerStats))]
     [RequireComponent(typeof(MovementHandler))]
     [RequireComponent(typeof(DetectCollision))]
     public class LadderMode : PlayerState {
-        [Header("Stats")]
-        [SerializeField] private float positionCorrectionOffset = 0.03f;
-        [SerializeField] private float speed = 2f;
-        [SerializeField, Range(1f, 5f)] private float sprintMultiplier = 1.2f;
-        [SerializeField, Range(0.5f, 10f)] private float climbGracePeriod = 1f;
-
         private DetectCollision detectCollision;
 
         private void Awake() => this.detectCollision = this.GetComponent<DetectCollision>();
@@ -34,12 +29,10 @@ namespace CaptainClaw.Scripts.Player
 
             while (true)
             {
-                // var side = Vector3.Dot(this.detectCollision.Front.Value.collider.transform.forward, MovementHandler.Direction);
-                // var input = Mathf.Lerp(InputReceiver.SmoothMovement.x, InputReceiver.SmoothMovement.y, side);
                 var direction = (this.transform.up * InputReceiver.SmoothMovement.y);
-                var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1);
-                finalSpeed *= this.speed;
-                MovementHandler.Climb(direction, finalSpeed, climbGracePeriod);
+                var finalSpeed = (InputReceiver.RunPressed ? PlayerStats.SprintMultiplier : 1);
+                finalSpeed *= PlayerStats.ClimbSpeed;
+                MovementHandler.Climb(direction, finalSpeed, PlayerStats.ClimbGracePeriod);
                 AnimationHandler.Climb(true);
 
                 yield return new WaitForEndOfFrame();

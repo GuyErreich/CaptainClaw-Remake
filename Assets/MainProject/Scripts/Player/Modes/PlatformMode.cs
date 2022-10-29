@@ -3,14 +3,10 @@ using System.Collections;
 
 namespace CaptainClaw.Scripts.Player
 {
+    [RequireComponent(typeof(PlayerStats))]
     [RequireComponent(typeof(MovementHandler))]
     [RequireComponent(typeof(DetectCollision))]
     public class PlatformMode : PlayerState {
-        [Header("Stats")]
-        [SerializeField] private float speed = 2f;
-        [SerializeField] private float rotationSpeed = 2f;
-        [SerializeField, Range(1f, 5f)] private float sprintMultiplier = 1.2f;
-
         private DetectCollision detectCollision;
 
         private bool Jump { get => InputReceiver.JumpPressed || MovementHandler.jumpAgain;}
@@ -22,26 +18,26 @@ namespace CaptainClaw.Scripts.Player
 
             while (true)
             {
-                // var direction = (this.transform.right * InputReceiver.Movement.x) + (this.transform.forward * InputReceiver.Movement.y);
-                var direction = (Camera.main.transform.right * InputReceiver.SmoothMovement.x) + (Camera.main.transform.forward * InputReceiver.SmoothMovement.y);
-                var finalSpeed = (InputReceiver.RunPressed ? this.sprintMultiplier : 1f);
-                finalSpeed *= this.speed;
+                var direction = (Camera.main.transform.right * InputReceiver.SmoothMovement.x) + 
+                                (Camera.main.transform.forward * InputReceiver.SmoothMovement.y);
+                var finalSpeed = (InputReceiver.RunPressed ? PlayerStats.SprintMultiplier : 1f);
+                finalSpeed *= PlayerStats.Speed;
 
                 MovementHandler.Move(direction, finalSpeed);
-                MovementHandler.Rotate(this.rotationSpeed);
+                MovementHandler.Rotate(PlayerStats.RotationSpeed);
 
                 AnimationHandler.Move();
 
                 yield return new WaitForEndOfFrame();
 
                 if (this.Jump) {
-                    MovementHandler.SetParent(null);
+                    this.transform.parent = null;
                     nextState = PlayerStates.Jumping;
                     break;
                 }
 
                 if(!this.detectCollision.CompareTag("Platform", DetectCollision.direction.bottom)) {
-                    MovementHandler.SetParent(null);
+                    this.transform.parent = null;
                     nextState = PlayerStates.GroundMovement;
                     break;
                 }

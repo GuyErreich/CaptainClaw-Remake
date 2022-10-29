@@ -29874,18 +29874,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 209513145054325141, guid: 4ec1b0afcd617db44950ca098a659005, type: 3}
-      propertyPath: rotationSpeed
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 209513145054325142, guid: 4ec1b0afcd617db44950ca098a659005, type: 3}
-      propertyPath: precision
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 209513145054325142, guid: 4ec1b0afcd617db44950ca098a659005, type: 3}
-      propertyPath: BottomDetector.height
-      value: 0.16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec1b0afcd617db44950ca098a659005, type: 3}
 --- !u!4 &1154147700 stripped
