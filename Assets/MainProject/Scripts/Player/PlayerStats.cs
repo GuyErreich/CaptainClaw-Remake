@@ -38,7 +38,6 @@ namespace CaptainClaw.Scripts.Player {
 
 		public void OnAfterDeserialize()
 		{
-			
 			Speed = this.speed;
 			RotationSpeed = this.rotationSpeed;
 			SprintMultiplier = this.sprintMultiplier;
@@ -52,15 +51,7 @@ namespace CaptainClaw.Scripts.Player {
 
 		public void OnBeforeSerialize()
 		{
-			this.speed = Speed;
-			this.rotationSpeed = RotationSpeed;
-			this.sprintMultiplier = SprintMultiplier;
-			this.jumpForce = JumpForce;
-			this.jumpGracePeriod = JumpGracePeriod;
-			this.usePhysics = UsePhysics;
-			this.climbSpeed = ClimbSpeed;
-			// this.positionCorrectionOffset = PositionCorrectionOffset;
-			this.climbGracePeriod = ClimbGracePeriod;
+			return;
 		}
 	}
 }

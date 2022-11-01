@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 209513145054325146}
   - component: {fileID: 209513145054325142}
   - component: {fileID: 4991472731887605282}
+  - component: {fileID: 470877578232358297}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -100,15 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ffb421c51741c418186c6a6fff59b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  rotationSpeed: 2
-  sprintMultiplier: 1.2
-  jumpForce: 7
-  jumpGracePeriod: 0.2
-  usePhysics: 0
-  climbSpeed: 2
-  positionCorrectionOffset: 0.03
-  climbGracePeriod: 1
 --- !u!114 &209513145054325141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +186,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395ed295733cee14084e3047d1d0bcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 1042990950080480553}
+--- !u!114 &470877578232358297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209513144066458698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe655537e81a3e48866e476cd0a2111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  rotationSpeed: 0.2
+  sprintMultiplier: 1
+  jumpForce: 7
+  jumpGracePeriod: 0.2
+  usePhysics: 0
+  climbSpeed: 4
+  climbGracePeriod: 7
 --- !u!1 &209513145043299541
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1766f4a7b20271e4aaa7984476114370, type: 3}
+--- !u!95 &1042990950080480553 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 1766f4a7b20271e4aaa7984476114370, type: 3}
+  m_PrefabInstance: {fileID: 6851073547364612280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6384237759321825107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1766f4a7b20271e4aaa7984476114370, type: 3}

@@ -55,7 +55,7 @@ namespace CaptainClaw.Scripts.Player
 
         public void OnBeforeSerialize()
         {
-            anim = _anim;
+            return;
         }
 
         public void OnAfterDeserialize()

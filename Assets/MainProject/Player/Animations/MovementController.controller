@@ -350,22 +350,22 @@ AnimatorStateMachine:
     m_Position: {x: 221.06299, y: 91.80562, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5810875394338484085}
-    m_Position: {x: 600, y: 90, z: 0}
+    m_Position: {x: 700, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7516586547237325147}
-    m_Position: {x: 220, y: 310, z: 0}
+    m_Position: {x: 220, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6149491469009359066}
-    m_Position: {x: 600, y: 310, z: 0}
+    m_Position: {x: 700, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7229130291319700216}
-    m_Position: {x: 970, y: 240, z: 0}
+    m_Position: {x: 450, y: -160, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 530, y: -250, z: 0}
+  m_AnyStatePosition: {x: 1210, y: 260, z: 0}
   m_EntryPosition: {x: -20, y: 120, z: 0}
   m_ExitPosition: {x: 1210, y: 310, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -463,43 +463,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: movementY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: velocityY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isJumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isMoving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isClimbing
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isGrounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
