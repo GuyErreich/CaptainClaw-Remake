@@ -10,7 +10,7 @@ namespace CaptainClaw.Scripts.Player
     [RequireComponent(typeof(JumpingMode))]
     [RequireComponent(typeof(LadderMode))]
     [RequireComponent(typeof(PlatformMode))]
-    [RequireComponent(typeof(HandleCollision))]
+    // [RequireComponent(typeof(HandleCollision))]
     public class PlayerMachine : StateMachine {
 
         [SerializeField] private PlayerStates InitState;

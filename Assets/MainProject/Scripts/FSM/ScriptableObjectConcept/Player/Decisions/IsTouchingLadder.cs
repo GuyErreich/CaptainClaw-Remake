@@ -10,11 +10,11 @@ namespace CaptainClaw.Scripts.FSM.ScriptableObjectConcept.Player.Decisions
         public override bool Decide(BaseStateMachine stateMachine)
         {
             new WaitForSeconds(3f);
-            var collider = stateMachine.GetComponent<DetectCollision>();
+            // var collider = stateMachine.GetComponent<DetectCollision>();
             
-            if (collider.CompareTag("Ladder", DetectCollision.direction.front)) {
-                return true;
-            }
+            // if (collider.CompareTag("Ladder", DetectCollision.direction.front)) {
+            //     return true;
+            // }
 
             return false;
         }
