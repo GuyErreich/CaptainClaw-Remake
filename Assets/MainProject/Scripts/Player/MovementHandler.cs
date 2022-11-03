@@ -3,20 +3,36 @@ using UnityEngine;
 namespace CaptainClaw.Scripts.Player
 {
     [RequireComponent(typeof(CharacterController))]
-    [RequireComponent(typeof(DetectCollision))]
+    // [RequireComponent(typeof(DetectCollision))]
     public class MovementHandler : MonoBehaviour {
+        #region Private Variables
         private static CharacterController _charController;
         private static Vector3 _velocity;
         private static float _ySpeed;
         private static float? _lastGroundedTime, _jumpButtonPressedTime, _lastClimbTime = null;
         private static float _climbGracePeriod, _jumpGracePeriod;
         private static DetectCollision _detectCollision;
+        #endregion Private Variables
 
+        #region Getters/Setters
+        public static bool UsePhysics { get; private set; }
         public static bool isMoving { get; private set; } 
         public static bool isRunning { get; private set; } 
-        public static bool isGrounded { get => _charController.isGrounded; }
+        public static Vector3 Velocity { get => _velocity; } 
+        public static bool isGrounded { get => _detectCollision.Bottom != null; }
         public static bool jumpAgain { get => Time.time - _jumpButtonPressedTime <= _jumpGracePeriod; } 
         public static bool climbAgain { get => (_lastClimbTime == null) || (Time.time - _lastClimbTime >= _climbGracePeriod); }
+
+        public static Vector3 Direction { 
+            get {
+                var X = (Camera.main.transform.right.normalized * InputReceiver.Movement.x);
+                var Z = (Camera.main.transform.forward.normalized * InputReceiver.Movement.y);
+                var directionXZ = Vector3.Scale(X + Z, new Vector3(1,0,1));
+
+                return directionXZ;
+            }
+        }
+        #endregion Getters/Setters
         
         private void Awake() {
             _charController = this.GetComponent<CharacterController>();
@@ -42,9 +58,15 @@ namespace CaptainClaw.Scripts.Player
             }
         }
 
-        public static void Rotate(float rotationSpeed) {
-            float rotationAngle = Mathf.LerpAngle(_charController.transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, rotationSpeed * Time.deltaTime);
-            _charController.transform.eulerAngles = new Vector3(0f, rotationAngle, 0f);
+        public static void Rotate(float rotationTime) {
+            if(InputReceiver.Movement != Vector2.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(Direction, Vector3.up);
+
+                var angle = Quaternion.Angle(_charController.transform.rotation, toRotation);
+
+                _charController.transform.rotation = Quaternion.RotateTowards(_charController.transform.rotation, toRotation, angle / (rotationTime / Time.deltaTime));
+            }
         }
 
         public static void Jump(float jumpForce, float jumpGracePeriod) {
@@ -77,7 +99,5 @@ namespace CaptainClaw.Scripts.Player
         public static void Launch(float launchForce) {
             _ySpeed = launchForce;
         }
-        
-        public static void SetParent(Transform parent) => _charController.transform.SetParent(parent);
     }
 }
