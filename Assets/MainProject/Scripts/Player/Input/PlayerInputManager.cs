@@ -10,7 +10,6 @@ namespace CaptainClaw.Scripts.Player
         private PlayerControls controls;
         private PlayerControls.CharacterActions characterInput;
         // private PlayerControls.SlimeRepoActions slimeRepoInput;
-        private InputReceiver receiver;
 
         private Vector2 smoothMovement, movement;
         private bool isMoving ,isJumping, isRunnig;

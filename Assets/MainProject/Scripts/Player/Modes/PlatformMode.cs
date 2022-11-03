@@ -27,6 +27,8 @@ namespace CaptainClaw.Scripts.Player
                 MovementHandler.Rotate(PlayerStats.RotationSpeed);
 
                 AnimationHandler.Move();
+                AnimationHandler.Grounded(MovementHandler.isGrounded);
+                AnimationHandler.Velocity(MovementHandler.Velocity);
 
                 yield return new WaitForEndOfFrame();
 

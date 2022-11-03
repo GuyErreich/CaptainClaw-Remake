@@ -33,6 +33,7 @@ namespace CaptainClaw.Scripts.Player
                 var finalSpeed = (InputReceiver.RunPressed ? PlayerStats.SprintMultiplier : 1);
                 finalSpeed *= PlayerStats.ClimbSpeed;
                 MovementHandler.Climb(direction, finalSpeed, PlayerStats.ClimbGracePeriod);
+                
                 AnimationHandler.Climb(true);
 
                 yield return new WaitForEndOfFrame();
