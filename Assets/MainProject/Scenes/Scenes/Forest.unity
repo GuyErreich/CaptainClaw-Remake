@@ -29874,6 +29874,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 470877578232358297, guid: 4ec1b0afcd617db44950ca098a659005, type: 3}
+      propertyPath: climbGracePeriod
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec1b0afcd617db44950ca098a659005, type: 3}
 --- !u!4 &1154147700 stripped
