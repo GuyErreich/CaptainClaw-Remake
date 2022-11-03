@@ -1,4 +1,5 @@
-using UnityEngine; 
+using UnityEngine;
+using CaptainClaw.Scripts.Managers;
 
 namespace CaptainClaw.Scripts.Player
 {
@@ -9,6 +10,7 @@ namespace CaptainClaw.Scripts.Player
 
         private PlayerControls controls;
         private PlayerControls.CharacterActions characterInput;
+        private PlayerControls.MiscActions menuInput;
         // private PlayerControls.SlimeRepoActions slimeRepoInput;
 
         private Vector2 smoothMovement, movement;
@@ -39,6 +41,9 @@ namespace CaptainClaw.Scripts.Player
 
         private void CharacterInput() {
             this.characterInput = this.controls.Character;
+            this.menuInput = this.controls.Misc;
+
+            this.menuInput.Menu.started += ctx => GameManager.Pause(); 
 
             this.characterInput.Movement.performed += ctx => this.currentMovementInput  = ctx.ReadValue<Vector2>();
             this.characterInput.Movement.performed += ctx => this.movement  = ctx.ReadValue<Vector2>();
