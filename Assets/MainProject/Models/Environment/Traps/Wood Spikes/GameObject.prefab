@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4c65cad6656b14ca250a30acf6280c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: -5
+  amount: -20
 --- !u!4 &9211321353934057584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2730869604189828853, guid: 70d47ff55e1996946979f6743bbe8f21, type: 3}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4c65cad6656b14ca250a30acf6280c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: -5
+  amount: -20
 --- !u!1001 &8944253709175599024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4c65cad6656b14ca250a30acf6280c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: -5
+  amount: -20
 --- !u!1001 &9096442317995696405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -490,4 +490,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4c65cad6656b14ca250a30acf6280c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: -5
+  amount: -20

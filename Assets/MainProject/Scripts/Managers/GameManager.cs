@@ -1,15 +1,27 @@
 using UnityEngine;
-using UnityEngine.Events;
-
+using CaptainClaw.Scripts.Player;
+using UnityEngine.SceneManagement;
 
 namespace CaptainClaw.Scripts.Managers {
-    public class GameManager : MonoBehaviour {
+    public class GameManager : MonoBehaviour, ISerializationCallbackReceiver {
+        [Header("References")]
+        [SerializeField] private Transform startingPoint;
+        [SerializeField] private Transform player;
         [SerializeField] private Canvas pauseMenu;
+
+        [Header("Game Setting")]
+        [SerializeField] private int numberOfLives = 3;
 
         private static GameManager _instance;
         private float lastTimeScale;
         private delegate void PauseState();
         private static PauseState _currentPauseState;
+
+        public static int NumberOfLives { get; private set;}
+        public static Vector3 SpawnPosition { get; set;}
+
+        public delegate void ResetLevel();
+        public static ResetLevel Reset { get; set;}
 
         private void Awake() {
             if (_instance == null) {
@@ -25,6 +37,10 @@ namespace CaptainClaw.Scripts.Managers {
             }
         }
 
+        private void Update() {
+            this.HealthSupervisor();
+        }
+
         public static void Pause() {
             _currentPauseState();
         }
@@ -32,7 +48,6 @@ namespace CaptainClaw.Scripts.Managers {
         private void OnPause() {
             this.lastTimeScale = Time.timeScale;
             Time.timeScale = 0;
-            print("fuck");
             _currentPauseState = this.OnUnpause;
         }
 
@@ -40,6 +55,28 @@ namespace CaptainClaw.Scripts.Managers {
             Time.timeScale = this.lastTimeScale;
 
             _currentPauseState = this.OnPause;
+        }
+
+        private void HealthSupervisor() {
+            if (NumberOfLives <= 0) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            if (PlayerStats.CurrentHealth <= 0) {
+                NumberOfLives--;
+                PlayerStats.CurrentHealth = PlayerStats.MaxHealth;
+                Reset();
+                this.player.position = SpawnPosition;
+            }
+        }
+
+        public void OnBeforeSerialize()
+        {
+            return;
+        }
+
+        public void OnAfterDeserialize()
+        {
+            NumberOfLives = this.numberOfLives;
         }
     }
 }
