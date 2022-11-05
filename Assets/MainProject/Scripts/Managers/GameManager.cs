@@ -48,11 +48,14 @@ namespace CaptainClaw.Scripts.Managers {
         private void OnPause() {
             this.lastTimeScale = Time.timeScale;
             Time.timeScale = 0;
+            this.pauseMenu.gameObject.SetActive(true);
+
             _currentPauseState = this.OnUnpause;
         }
 
         private void OnUnpause() {
             Time.timeScale = this.lastTimeScale;
+            this.pauseMenu.gameObject.SetActive(false);
 
             _currentPauseState = this.OnPause;
         }

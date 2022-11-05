@@ -36,7 +36,7 @@ namespace CaptainClaw.Scripts.Player {
                         MovementHandler.Launch(this.hitLaunchSpeed);
                         this.IgnoreCollision(this.ignoreCollisionInGraceTime);
                         this.lastHitTime = Time.time;
-                        PlayerStats.CurrentHealth += damage.Amount;
+                        PlayerStats.CurrentHealth += Mathf.Clamp(damage.Amount, Mathf.NegativeInfinity, PlayerStats.MaxHealth);
                         return;
                     }
                 }
