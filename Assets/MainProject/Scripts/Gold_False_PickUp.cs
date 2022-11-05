@@ -10,7 +10,7 @@ public class Gold_False_PickUp : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

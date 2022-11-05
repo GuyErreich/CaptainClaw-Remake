@@ -3,6 +3,9 @@ using UnityEngine;
 namespace CaptainClaw.Scripts.Player {
 	public class PlayerStats : MonoBehaviour, ISerializationCallbackReceiver {
 		#region Serializable Fields
+		[Header("Health")]
+		[SerializeField] private float health = 100f;
+
 		[Header("Movement")]
 		[SerializeField] private float speed = 7f;
 		[SerializeField] private float rotationSpeed = 0.2f;
@@ -20,6 +23,9 @@ namespace CaptainClaw.Scripts.Player {
 		#endregion Serializable Fields
 
 		#region Serialized Static Variables
+		//Health
+		public static float MaxHealth { get; private set; }
+		public static float CurrentHealth { get; set; }
 		// Movement
 		public static float Speed { get; private set; }
 		public static float RotationSpeed { get; private set; }
@@ -38,6 +44,9 @@ namespace CaptainClaw.Scripts.Player {
 
 		public void OnAfterDeserialize()
 		{
+			
+			MaxHealth = this.health;
+			CurrentHealth = this.health;
 			Speed = this.speed;
 			RotationSpeed = this.rotationSpeed;
 			SprintMultiplier = this.sprintMultiplier;
