@@ -20,6 +20,8 @@ GameObject:
   - component: {fileID: 209513145054325142}
   - component: {fileID: 4991472731887605282}
   - component: {fileID: 470877578232358297}
+  - component: {fileID: 1443664096}
+  - component: {fileID: 1443664108}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -200,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe655537e81a3e48866e476cd0a2111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   speed: 7
   rotationSpeed: 0.2
   sprintMultiplier: 1
@@ -207,7 +210,42 @@ MonoBehaviour:
   jumpGracePeriod: 0.2
   usePhysics: 0
   climbSpeed: 4
-  climbGracePeriod: 7
+  climbGracePeriod: 1
+--- !u!114 &1443664096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209513144066458698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b0005a8d9b04d409b9f05106167c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitLaunchSpeed: 5
+  hitGracePeriod: 3
+  ignoreCollisionInGraceTime: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &1443664108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209513144066458698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fa062263b67be4d882eebcaea2f5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precision: 11
+  radius: 0.0001
+  unwantedLayers:
+    serializedVersion: 2
+    m_Bits: 2147483647
 --- !u!1 &209513145043299541
 GameObject:
   m_ObjectHideFlags: 0

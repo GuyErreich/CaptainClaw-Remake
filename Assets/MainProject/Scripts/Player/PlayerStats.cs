@@ -24,7 +24,8 @@ namespace CaptainClaw.Scripts.Player {
 
 		#region Serialized Static Variables
 		//Health
-		public static float Health { get; set; }
+		public static float MaxHealth { get; private set; }
+		public static float CurrentHealth { get; set; }
 		// Movement
 		public static float Speed { get; private set; }
 		public static float RotationSpeed { get; private set; }
@@ -43,7 +44,9 @@ namespace CaptainClaw.Scripts.Player {
 
 		public void OnAfterDeserialize()
 		{
-			Health = this.health;
+			
+			MaxHealth = this.health;
+			CurrentHealth = this.health;
 			Speed = this.speed;
 			RotationSpeed = this.rotationSpeed;
 			SprintMultiplier = this.sprintMultiplier;
