@@ -34,6 +34,7 @@ namespace CaptainClaw.Scripts {
         private void Reset() {
             this.material.SetVector("_Dissolve_Tile_Direction", this.cacheTile * Time.deltaTime / this.dissolveTime);
             this.material.SetFloat("_Dissolve_Strength", this.minDissolveRatio);
+            this.once = false;
         }
 
         private bool once = false;

@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MainProject/Scenes/Scenes/Forest.unity
+    guid: 88d327558425514438952ea90d239a6b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a3d841c0b08c2c648b57391b0d14e71b, type: 2}
