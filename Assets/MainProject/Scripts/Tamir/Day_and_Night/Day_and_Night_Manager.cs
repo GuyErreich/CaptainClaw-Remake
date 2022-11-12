@@ -10,10 +10,6 @@ public class Day_and_Night_Manager : MonoBehaviour
     [SerializeField] private LightingPreset Preset;
     [SerializeField, Range(0, 600)] private float TimeOfDay;
 
-    private void Start()
-    {
-        TimeOfDay = 300;
-    }
     private void Update()
     {
         if (Preset == null)
