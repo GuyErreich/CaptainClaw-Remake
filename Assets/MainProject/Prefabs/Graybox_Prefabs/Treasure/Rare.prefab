@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  scoreValue: 50
+  scoreValue: 5000
 --- !u!4 &7005210128414800031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 322662284614681829, guid: 461df1ff2a7ccc248b5616647ff2100f, type: 3}

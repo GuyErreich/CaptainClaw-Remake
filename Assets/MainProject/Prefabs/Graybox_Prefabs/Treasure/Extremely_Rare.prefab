@@ -209,7 +209,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.77427006
   m_Center: {x: 0.00046496093, y: 0.023871914, z: -0.027334813}
---- !u!114 &7530960650693090311
+--- !u!114 &1479260880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,10 +218,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5629462350144294138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b07dbe68af5d2747a3d660ecdd99f75, type: 3}
+  m_Script: {fileID: 11500000, guid: 112fadb00d17ecc429808d05c900c074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+  scoreValue: 20000
 --- !u!1 &5839271163961717770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 21e618f5becb1b04592bf5535b3827da, type: 3}
