@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6049592067379421012}
   - component: {fileID: 7179621785660767770}
   - component: {fileID: 3718810221037639193}
-  - component: {fileID: -36406980820614178}
   m_Layer: 0
   m_Name: stairs6T2
   m_TagString: Untagged
@@ -30,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5031, y: 1.5031005, z: 1.5031005}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6733739227360866113}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,17 +84,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-36406980820614178
-MeshCollider:
+--- !u!1 &5559279470841092525
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345677336654065163}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6733739227360866113}
+  - component: {fileID: 2967978061969352114}
+  m_Layer: 0
+  m_Name: Collider6T2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6733739227360866113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559279470841092525}
+  m_LocalRotation: {x: 0.0022437873, y: -0.02198188, z: -0.101535335, w: 0.9945865}
+  m_LocalPosition: {x: -3.523, y: 3.8, z: 9.386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6049592067379421012}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -2.532, z: -11.658}
+--- !u!65 &2967978061969352114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559279470841092525}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2977093026808551255, guid: 939fb8338478fb54886a8725c200ecac, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.5041014, y: 1.5034688, z: 0.10828496}
+  m_Center: {x: 0.08215748, y: -0.119391024, z: 0.10002896}
