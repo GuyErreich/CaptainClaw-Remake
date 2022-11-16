@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
-using CaptainClaw.Scripts.Managers;
 
 namespace CaptainClaw.Scripts.Player {
     [RequireComponent(typeof(CharacterController))]
@@ -37,6 +35,7 @@ namespace CaptainClaw.Scripts.Player {
                         this.IgnoreCollision(this.ignoreCollisionInGraceTime);
                         this.lastHitTime = Time.time;
                         PlayerStats.CurrentHealth += Mathf.Clamp(damage.Amount, Mathf.NegativeInfinity, PlayerStats.MaxHealth);
+                        AnimationHandler.Hit();
                         return;
                     }
                 }

@@ -16,6 +16,8 @@ namespace CaptainClaw.Scripts.Player
         private static int id_isClimbing = Animator.StringToHash("isClimbing");
         private static int id_isGrounded = Animator.StringToHash("isGrounded");
         private static int id_velocityY = Animator.StringToHash("velocityY");
+        private static int id_isHit = Animator.StringToHash("isHit");
+        private static int id_isJackSparro = Animator.StringToHash("JackSparro");
         #endregion Anim Hashes
 
         public static void Move() {
@@ -52,6 +54,14 @@ namespace CaptainClaw.Scripts.Player
         public static void Velocity(Vector3 velocity) {
             _anim.SetFloat(id_velocityY, velocity.y);
         }
+
+        public static void Hit() {
+            _anim.SetTrigger(id_isHit);
+        }
+
+        public static void GoJackSparroNut() {
+            _anim.SetBool(id_isJackSparro, InputReceiver.RunPressed);
+        }        
 
         public void OnBeforeSerialize()
         {

@@ -35,7 +35,8 @@ namespace CaptainClaw.Scripts.Player
 
                 MovementHandler.Jump(PlayerStats.JumpForce, PlayerStats.JumpGracePeriod);
                 MovementHandler.Move(direction, finalSpeed);
-                MovementHandler.Gravity();
+                // MovementHandler.Gravity();
+                MovementHandler.Fall(PlayerStats.FallMultiplier);
                 MovementHandler.Rotate(PlayerStats.RotationSpeed);
 
                 AnimationHandler.Move();
