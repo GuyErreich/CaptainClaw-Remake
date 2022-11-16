@@ -47,7 +47,8 @@ namespace CaptainClaw.Scripts.Player
 
             this.characterInput.Movement.performed += ctx => this.currentMovementInput  = ctx.ReadValue<Vector2>();
             this.characterInput.Movement.performed += ctx => this.movement  = ctx.ReadValue<Vector2>();
-            this.characterInput.Run.performed += ctx => this.isRunnig = ctx.ReadValueAsButton();
+            this.characterInput.Run.started += ctx => this.isRunnig = true;
+            this.characterInput.Run.canceled += ctx => this.isRunnig = false;
             this.characterInput.Jump.started += ctx => this.isJumping = ctx.ReadValueAsButton();
             this.characterInput.Jump.canceled += ctx => this.isJumping = ctx.ReadValueAsButton();
         }

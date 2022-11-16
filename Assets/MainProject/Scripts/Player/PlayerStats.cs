@@ -13,6 +13,7 @@ namespace CaptainClaw.Scripts.Player {
 
 		[Header("Jump")]
 		[SerializeField] private float jumpForce = 7f;
+		[SerializeField, Range(1, 3)] private float fallMultiplier = 1.25f;
 		[SerializeField, Range(0f, 1f)] private float jumpGracePeriod = 0.2f;
 		[SerializeField] private bool usePhysics = false;
 
@@ -32,8 +33,9 @@ namespace CaptainClaw.Scripts.Player {
 		public static float SprintMultiplier  { get; private set; }
 
 		// Jump
-		public static float JumpForce { get; private set; }
+		public static float JumpForce { get; set; }
 		public static float JumpGracePeriod  { get; private set; }
+		public static float FallMultiplier  { get; private set; }
 		public static bool UsePhysics { get; private set; }
 
 		// Climb Ladder
@@ -52,6 +54,7 @@ namespace CaptainClaw.Scripts.Player {
 			SprintMultiplier = this.sprintMultiplier;
 			JumpForce = this.jumpForce;
 			JumpGracePeriod = this.jumpGracePeriod;
+			FallMultiplier = this.fallMultiplier;
 			UsePhysics = this.usePhysics;
 			ClimbSpeed = this.climbSpeed;
 			// PositionCorrectionOffset = this.positionCorrectionOffset;

@@ -24,12 +24,14 @@ namespace CaptainClaw.Scripts.Player
                 var finalSpeed = (InputReceiver.RunPressed ? PlayerStats.SprintMultiplier : 1f);
                 finalSpeed *= PlayerStats.Speed;
                 MovementHandler.Move(direction, finalSpeed);
-                MovementHandler.Gravity();
+                // MovementHandler.Gravity();
+                MovementHandler.Fall(PlayerStats.FallMultiplier);
                 MovementHandler.Rotate(PlayerStats.RotationSpeed);
                 
                 AnimationHandler.Move();
                 AnimationHandler.Grounded(MovementHandler.isGrounded);
                 AnimationHandler.Velocity(MovementHandler.Velocity);
+                AnimationHandler.GoJackSparroNut();
 
                 yield return new WaitForEndOfFrame();
 

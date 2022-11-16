@@ -58,6 +58,22 @@ namespace CaptainClaw.Scripts.Player
             }
         }
 
+        public static void Fall(float speed) {
+            if (!_charController.isGrounded) {
+                if (_ySpeed >= 0f)
+                    _ySpeed += Physics.gravity.y * Time.deltaTime;
+                else 
+                    _ySpeed += Physics.gravity.y * speed * Time.deltaTime;
+            }
+
+            if(_charController.isGrounded) {
+                _lastGroundedTime = Time.time;
+
+                if(_ySpeed < 0f)
+                    _ySpeed = 0f;
+            }
+        }
+
         public static void Rotate(float rotationTime) {
             if(InputReceiver.Movement != Vector2.zero)
             {
