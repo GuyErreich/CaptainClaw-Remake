@@ -9,11 +9,10 @@ public class Day_and_Night_Manager : MonoBehaviour
     [SerializeField] private Light DirectionalLight;
     [SerializeField] private LightingPreset Preset;
     [SerializeField, Range(0, 600)] private float TimeOfDay;
+    public Material skybox1_Night;
+    public Material skybox2_Dawn;
+    public Material skybox3_Day;
 
-    private void Start()
-    {
-        TimeOfDay = 300;
-    }
     private void Update()
     {
         if (Preset == null)
@@ -30,6 +29,7 @@ public class Day_and_Night_Manager : MonoBehaviour
         {
             UpdateLighting(TimeOfDay / 600f);
         }
+        SetSkybox();
     }
 
 
@@ -48,7 +48,21 @@ public class Day_and_Night_Manager : MonoBehaviour
         }
 
     }
-
+    private void SetSkybox()
+    {
+        if (TimeOfDay < 300)
+        {
+            RenderSettings.skybox = skybox1_Night;
+        }
+        if (TimeOfDay > 300 && TimeOfDay < 340)
+        {
+            RenderSettings.skybox = skybox2_Dawn;
+        }
+        if (TimeOfDay > 340)
+        {
+            RenderSettings.skybox = skybox3_Day;
+        }
+    }
     //Try to find a directional light to use if we haven't set one
     private void OnValidate()
     {

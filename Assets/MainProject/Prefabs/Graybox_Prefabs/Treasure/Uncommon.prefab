@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  scoreValue: 15
+  scoreValue: 1000
 --- !u!1001 &6757699612788885851
 PrefabInstance:
   m_ObjectHideFlags: 0
