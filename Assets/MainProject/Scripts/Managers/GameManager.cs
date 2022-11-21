@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using CaptainClaw.Scripts.Player;
 using UnityEngine.SceneManagement;
 
@@ -7,19 +8,29 @@ namespace CaptainClaw.Scripts.Managers {
         [Header("References")]
         [SerializeField] private Transform startingPoint;
         [SerializeField] private Transform player;
-        [SerializeField] private Canvas pauseMenu;
 
         [Header("Game Setting")]
+        [SerializeField] private float amountOfTime = 3f;
         [SerializeField] private int numberOfLives = 3;
+        [SerializeField] private int numberOfCoinsToWin = 100;
+
+        [Header("Pause Events"), Space()]
+        [SerializeField] private UnityEvent onPause;
+        [SerializeField] private UnityEvent onUnpause;
+
+        [Header("End Game Events"), Space()]
+        [SerializeField] private UnityEvent onLose;
+        [SerializeField] private UnityEvent onNotEnoughCoins;
+        [SerializeField] private UnityEvent onWin;
 
         private static GameManager _instance;
         private float lastTimeScale;
-        private delegate void PauseState();
-        private static PauseState _currentPauseState;
 
-        public static int NumberOfLives { get; private set;}
         public static Vector3 SpawnPosition { get; set;}
+        public static int NumberOfLives { get; private set;}
 
+        private delegate void PauseState();
+        private PauseState currentPauseState;
         public delegate void ResetLevel();
         public static ResetLevel Reset { get; set;}
 
@@ -30,7 +41,7 @@ namespace CaptainClaw.Scripts.Managers {
                 DontDestroyOnLoad(this.gameObject);
 
                 //Rest of your Awake code
-                _currentPauseState = this.OnPause;
+                this.currentPauseState = this.OnPause;
             } 
             else {
                 Destroy(this);
@@ -42,33 +53,51 @@ namespace CaptainClaw.Scripts.Managers {
         }
 
         public static void Pause() {
-            _currentPauseState();
+            _instance.currentPauseState();
         }
 
         private void OnPause() {
             this.lastTimeScale = Time.timeScale;
             Time.timeScale = 0;
-            this.pauseMenu.gameObject.SetActive(true);
 
-            _currentPauseState = this.OnUnpause;
+            onPause.Invoke();
+
+            this.currentPauseState = this.OnUnpause;
         }
 
         private void OnUnpause() {
             Time.timeScale = this.lastTimeScale;
-            this.pauseMenu.gameObject.SetActive(false);
 
-            _currentPauseState = this.OnPause;
+            onUnpause.Invoke();
+
+            this.currentPauseState = this.OnPause;
+        }
+
+        private void TimeSupervisor() {
+            if (this.amountOfTime <= 0) {
+                onLose.Invoke();
+            }
         }
 
         private void HealthSupervisor() {
             if (NumberOfLives <= 0) {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                this.player.position = SpawnPosition;
+                Reset();
             }
             if (PlayerStats.CurrentHealth <= 0) {
-                NumberOfLives--;
+                Mathf.Clamp(this.numberOfLives, 0, Mathf.Infinity);
                 PlayerStats.CurrentHealth = PlayerStats.MaxHealth;
                 Reset();
                 this.player.position = SpawnPosition;
+            }
+        }
+
+        public static void EndGame() {
+            if (ScoreManager.GetCurrentScore() <= _instance.numberOfCoinsToWin) {
+                _instance.onNotEnoughCoins.Invoke();
+            }
+            else {
+                _instance.onWin.Invoke();
             }
         }
 
