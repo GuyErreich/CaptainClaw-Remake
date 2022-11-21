@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vanishingTime: 1.4
   materializingTime: 2
-  presenceTime: 2
+  visibleTime: 3
+  invisibleTime: 3
   threshold: 0.02
   delay: 0
