@@ -8,9 +8,8 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _scoreText;
     private int _score = 0;
-   
     private bool gameOver;
-    private int currentScore = 0;
+    private static int currentScore = 0;
     //private int topScore = 0;
 
     [Header("UI Elements")]
@@ -83,7 +82,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public int GetCurrentScore()
+    public static int GetCurrentScore()
     {
         return currentScore;
     }

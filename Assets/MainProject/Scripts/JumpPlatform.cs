@@ -4,6 +4,10 @@ using CaptainClaw.Scripts.Player;
 namespace CaptainClaw.Scripts {
     public class JumpPlatform : MonoBehaviour
     {
+        [Header("References")]
+        [SerializeField] private Animator anim;
+
+
         [Header("Jump Stats")]
         [SerializeField] private float jumpForce = 7f;
         [SerializeField, Range(1, 10)] private float launchBoost = 1.5f;
@@ -52,6 +56,8 @@ namespace CaptainClaw.Scripts {
                 return;
             }
 
+            this.anim.SetTrigger("Trig");
+            
             this.currentTime = Time.time;
             if (this.currentTime - this.startTime < this.launchDelay) {
                 this.Cache_Reset();
@@ -64,7 +70,9 @@ namespace CaptainClaw.Scripts {
                 }
             }
 
+            
             if (this.cached_characterController) {
+
                 MovementHandler.Launch(this.jumpForce * this.launchBoost);
                 this.Cache_Reset();
                 this.ResetDelay();
