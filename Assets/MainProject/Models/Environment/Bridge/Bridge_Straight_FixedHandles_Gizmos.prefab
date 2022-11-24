@@ -613,7 +613,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0.33, y: 7.95, z: 0.18}
-  scale: {x: 3.93, y: 0.66, z: 0.16}
+  scale: {x: 3.93, y: 0.66, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1313,7 +1313,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0.36, y: 7.24, z: 0.15}
-  scale: {x: 3.74, y: 0.62, z: 0.16}
+  scale: {x: 3.74, y: 0.62, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1598,7 +1598,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0.26, y: 5.51, z: 0.12}
-  scale: {x: 4.04, y: 0.6, z: 0.16}
+  scale: {x: 4.04, y: 0.6, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 1.32, z: 0.09}
-  scale: {x: 3.99, y: 0.6, z: 0.16}
+  scale: {x: 3.99, y: 0.6, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -2251,7 +2251,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 1.92, z: 0.06}
-  scale: {x: 3.78, y: 0.6, z: 0.16}
+  scale: {x: 3.78, y: 0.6, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -5400,7 +5400,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0.12, y: 4.27, z: 0.1}
-  scale: {x: 3.97, y: 0.6, z: 0.16}
+  scale: {x: 3.97, y: 0.6, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -6349,7 +6349,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0.1, y: 3.06, z: 0.09}
-  scale: {x: 3.81, y: 0.6, z: 0.16}
+  scale: {x: 3.81, y: 0.6, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -6966,7 +6966,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0, y: 0, z: 0.09}
-  scale: {x: 3.8, y: 0.6, z: 0.16}
+  scale: {x: 3.8, y: 0.6, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -7085,7 +7085,7 @@ MonoBehaviour:
   dissolveTime: 0.7
   threshold: 0.02
   center: {x: 0.31, y: 6.71, z: 0.15}
-  scale: {x: 3.94, y: 0.6, z: 0.16}
+  scale: {x: 3.94, y: 0.6, z: 1.07}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
