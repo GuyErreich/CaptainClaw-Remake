@@ -1,45 +1,93 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-
 
 [ExecuteAlways]
 public class Day_and_Night_Manager : MonoBehaviour
 {
+    [Header("Light")]
+
     [SerializeField] private Light DirectionalLight;
     [SerializeField] private LightingPreset Preset;
     [SerializeField, Range(0, 600)] private float TimeOfDay;
-    public Material skybox1_Night;
-    public Material skybox2_Dawn;
-    public Material skybox3_Day;
 
+
+    [Header("Skyboxes")] 
+
+    [SerializeField] private Material skybox1_Night;
+    [SerializeField] private Material skybox2_Dawn;
+    [SerializeField] private Material skybox3_Day;
+
+
+    [Header("Audio")]
+
+    [SerializeField] private AudioSource alarmAudio;
+    [SerializeField] private AudioSource alarmSpeech;
+    private int audioHBP = 0; //Alarm Audio Has Been Played
+    private int speechHBP = 0; //Alarm Speech Has Been Played
+
+
+    [Header("UI")]
+
+    [SerializeField] private TMP_Text timerText;
+    private float currentTimeOfDay = 60;
+    private void Start()
+    {
+        timerText.enabled = false;
+    }
     private void Update()
     {
         if (Preset == null)
             return;
 
+        currentTimeOfDay = 360 - TimeOfDay;
+
         if (Application.isPlaying)
         {
-            //(Replace with a reference to the game time)
             TimeOfDay += Time.deltaTime;
-            TimeOfDay %= 600; //Modulus to ensure always between 0-24
+            TimeOfDay %= 600;
             UpdateLighting(TimeOfDay / 600f);
         }
         else
         {
             UpdateLighting(TimeOfDay / 600f);
         }
+        if (TimeOfDay >= 300)
+        {
+            if (timerText.enabled == false)
+            {
+                timerText.enabled = true;
+            }
+            timerText.text = currentTimeOfDay.ToString("f0");
+
+        }
+        PlayAlarm();
         SetSkybox();
+
     }
 
+    private void PlayAlarm()
+    {
+        if (TimeOfDay >= 300 && !alarmAudio.isPlaying && audioHBP<1)
+        {
+            alarmAudio.Play();
+            audioHBP++;
+        }
+        if (TimeOfDay >= 302 && !alarmSpeech.isPlaying &&speechHBP<1)
+        {
+            alarmSpeech.Play();
+            speechHBP++;
+        }
+        if (TimeOfDay >= 310)
+        {
+            alarmAudio.Stop();
+        }
+    }
 
     private void UpdateLighting(float timePercent)
     {
-        //Set ambient and fog
         RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercent);
         RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercent);
 
-        //If the directional light is set then rotate and set it's color, I actually rarely use the rotation because it casts tall shadows unless you clamp the value
         if (DirectionalLight != null)
         {
             DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercent);
@@ -63,18 +111,15 @@ public class Day_and_Night_Manager : MonoBehaviour
             RenderSettings.skybox = skybox3_Day;
         }
     }
-    //Try to find a directional light to use if we haven't set one
     private void OnValidate()
     {
         if (DirectionalLight != null)
             return;
 
-        //Search for lighting tab sun
         if (RenderSettings.sun != null)
         {
             DirectionalLight = RenderSettings.sun;
         }
-        //Search scene for light that fits criteria (directional)
         else
         {
             Light[] lights = GameObject.FindObjectsOfType<Light>();
