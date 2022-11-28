@@ -18,13 +18,14 @@ namespace CaptainClaw.Scripts {
 
         private void OnTriggerEnter(Collider other) {
             if (other.tag == "Player") {
+                this.GetComponent<Renderer>().enabled = false;
                 StartCoroutine(this.StartBuff());
             }
         }
 
         private IEnumerator StartBuff() {
             this.gameObject.GetComponent<Renderer>().enabled = false;
-            this.GetComponent<SphereCollider>().enabled = false;
+            this.GetComponent<Collider>().enabled = false;
             PlayerStats.JumpForce *= this.jumpMultiplier;
 
             var time = 0f;
