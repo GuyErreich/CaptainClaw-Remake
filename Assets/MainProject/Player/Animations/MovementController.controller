@@ -79,6 +79,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-7446731491597915841
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce7434fcddb94b47ad2eac1746111be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &-6607971213793588469
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -177,7 +189,8 @@ AnimatorState:
   - {fileID: 3419849437499403539}
   - {fileID: 3844950610145943405}
   - {fileID: 3094479147023225888}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 8912022827614408842}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -303,6 +316,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-4447246611900710664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7da0d42f58b9ab4fac9413f5b2a0990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1102 &-4394942334177183923
 AnimatorState:
   serializedVersion: 6
@@ -355,13 +380,30 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-3785338264300604327
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c1089fca33b8e47a70d84a52138e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionNames:
+  - Falling -> Idle
+  - Jump -> Idle
+  clips:
+  - {fileID: 8300000, guid: 69569a24d41d3a946aaff7a6ba1602b7, type: 3}
 --- !u!1101 &-3466338180024582310
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
+  m_Name: Jump -> Idle
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: isJumping
@@ -386,6 +428,26 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-3194244796697062628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f7b28a5bcd7994f9fb48dc46894dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 3
+  linesDelay: 3
+  clips:
+  - {fileID: 8300000, guid: 805abce7272607e4c833e232a3caca48, type: 3}
+  - {fileID: 8300000, guid: 26c08d9d54e85bd418de38f66da48b37, type: 3}
+  - {fileID: 8300000, guid: 8b18e5b1aa596504b8996b1d7054a611, type: 3}
+  - {fileID: 8300000, guid: 50bffef2887ba4f44bcf066f88ef12eb, type: 3}
+  - {fileID: 8300000, guid: 1fed52a06bfd1404a8c8cc9aac8ec148, type: 3}
 --- !u!1101 &-3019371092568842653
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -522,7 +584,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8003337863526582263}
-    m_Position: {x: 221.06299, y: 91.80562, z: 0}
+    m_Position: {x: 220, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5810875394338484085}
     m_Position: {x: 700, y: 90, z: 0}
@@ -780,7 +842,7 @@ AnimatorStateTransition:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
+  m_Name: Falling -> Run
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: isGrounded
@@ -808,7 +870,7 @@ AnimatorStateTransition:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
+  m_Name: Jump -> Run
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: isJumping
@@ -1007,7 +1069,7 @@ AnimatorStateTransition:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
+  m_Name: Falling -> Idle
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: isGrounded
@@ -1134,6 +1196,20 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &6125544175913927190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dac93c0469527444926c6a0224dabc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips: []
+  audioSource: {fileID: 0}
 --- !u!1101 &6693452775097758757
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1227,7 +1303,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -203655887218126122, guid: 1cf334f474a7a0b40a23cf2f2f54484d, type: 3}
-  m_Tag: 
+  m_Tag: Jump
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -1247,7 +1323,9 @@ AnimatorState:
   - {fileID: 1313993707159163801}
   - {fileID: 5228720855108473166}
   - {fileID: 2838728949140776793}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -3785338264300604327}
+  - {fileID: -3194244796697062628}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1310,3 +1388,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &8912022827614408842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c1089fca33b8e47a70d84a52138e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionNames:
+  - Falling -> Run
+  - Jump -> Run
+  clips:
+  - {fileID: 8300000, guid: 69569a24d41d3a946aaff7a6ba1602b7, type: 3}
