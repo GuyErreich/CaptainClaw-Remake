@@ -1,13 +1,22 @@
 using System.Collections;
 using UnityEngine;
 using CaptainClaw.Scripts.Player;
+using UnityEngine.Events;
 
 namespace CaptainClaw.Scripts {
     [RequireComponent(typeof(SphereCollider))]
     public class Catnip : MonoBehaviour
     {
+        [Header("Stats")] 
+        [SerializeField] private GameObject catnip;
+
+        [Header("Stats")]
         [SerializeField, Range(1, 3)] private float jumpMultiplier = 1.25f;
         [SerializeField] private float duration = 3f;
+
+        [Header("Buff Events"), Space()]
+        [SerializeField] private UnityEvent onStart;
+        [SerializeField] private UnityEvent onEnd;
 
         private float cachedJumpForce;
 
@@ -18,15 +27,15 @@ namespace CaptainClaw.Scripts {
 
         private void OnTriggerEnter(Collider other) {
             if (other.tag == "Player") {
-                this.GetComponent<Renderer>().enabled = false;
                 StartCoroutine(this.StartBuff());
             }
         }
 
         private IEnumerator StartBuff() {
-            this.gameObject.GetComponent<Renderer>().enabled = false;
             this.GetComponent<Collider>().enabled = false;
             PlayerStats.JumpForce *= this.jumpMultiplier;
+
+            this.onStart.Invoke();
 
             var time = 0f;
 
@@ -41,6 +50,7 @@ namespace CaptainClaw.Scripts {
 
         private void EndBuff() {
             PlayerStats.JumpForce = this.cachedJumpForce;
+            this.onEnd.Invoke();
         }
     }
 }

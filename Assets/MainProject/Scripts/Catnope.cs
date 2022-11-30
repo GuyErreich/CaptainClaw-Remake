@@ -3,7 +3,7 @@ using UnityEngine;
 using CaptainClaw.Scripts.Player;
 
 namespace CaptainClaw.Scripts {
-    [RequireComponent(typeof(SphereCollider))]
+    [RequireComponent(typeof(Collider))]
     public class Catnope : MonoBehaviour
     {
         [SerializeField, Range(0.001f, 1)] private float jumpMultiplier = 0.25f;

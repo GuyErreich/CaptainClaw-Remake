@@ -440,8 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f7b28a5bcd7994f9fb48dc46894dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 3
-  linesDelay: 3
+  startDelay: 15
+  linesDelay: 10
   clips:
   - {fileID: 8300000, guid: 805abce7272607e4c833e232a3caca48, type: 3}
   - {fileID: 8300000, guid: 26c08d9d54e85bd418de38f66da48b37, type: 3}

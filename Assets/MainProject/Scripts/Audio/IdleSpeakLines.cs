@@ -31,17 +31,17 @@ namespace CaptainClaw.Scripts.Audio {
         }
 
         override public void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {
-            this.cancellationTokenSource.Cancel();
-            this.cancellationTokenSource.Dispose();
-            while(!this.mainTask.IsCanceled) {}
-            this.mainTask.Dispose();
+            this.StopTalking();
         }
 
         private void OnDestroy() {
-            this.cancellationTokenSource.Cancel();
-            this.cancellationTokenSource.Dispose();
-            while(!this.mainTask.IsCanceled) {}
-            this.mainTask.Dispose();
+            this.StopTalking();
+        }
+
+        private void StopTalking() {
+            if (this.cancellationTokenSource != null) {
+                this.cancellationTokenSource.Cancel();
+            }
         }
 
         private async Task StartTalking(CancellationToken cancellationToken) {            
