@@ -50,6 +50,7 @@ namespace CaptainClaw.Scripts.Managers {
 
         private void Update() {
             this.HealthSupervisor();
+            this.TimeSupervisor();
         }
 
         public static void Pause() {
@@ -77,6 +78,8 @@ namespace CaptainClaw.Scripts.Managers {
             if (this.amountOfTime <= 0) {
                 onLose.Invoke();
             }
+
+            this.amountOfTime -= Time.deltaTime;
         }
 
         private void HealthSupervisor() {
