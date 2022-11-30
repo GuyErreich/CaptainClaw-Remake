@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace CaptainClaw.Scripts {
     [RequireComponent(typeof(Material))]
+    [RequireComponent(typeof(Collider))]
     public class VanishingPlatform : MonoBehaviour
     {
 
