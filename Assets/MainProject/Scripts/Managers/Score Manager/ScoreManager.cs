@@ -12,6 +12,11 @@ public class ScoreManager : MonoBehaviour
     private static int currentScore = 0;
     //private int topScore = 0;
 
+
+    [SerializeField] private List<AudioSource> treasureSounds; //Tamir Added
+    private int treasuresPickedUp = 0;
+
+
     [Header("UI Elements")]
     public TextMeshProUGUI HUDScoreText;
     public TextMeshProUGUI winScoreText;
@@ -22,12 +27,12 @@ public class ScoreManager : MonoBehaviour
     {
         gameOver = false;
         //topScore = PlayerPrefs.GetInt("TopScore", 0);
-        
+
         if (winScoreText && HUDScoreText && loseScoreText)
         {
             UpdateScore();
         }
-        
+
         /*if (topScoreText)
         {
             topScoreText.text = topScore.ToString();
@@ -43,6 +48,10 @@ public class ScoreManager : MonoBehaviour
 
         _scoreText.text = _score.ToString();
 
+
+
+
+
         Debug.Log("Current score: " + _score);
 
     }
@@ -56,6 +65,14 @@ public class ScoreManager : MonoBehaviour
         if (currentScore < 0)
         {
             currentScore = 0;
+        }
+
+        treasuresPickedUp++; // Tamir Added
+        if (treasuresPickedUp >= Random.Range(5, 10))
+        {
+            treasuresPickedUp = 0;
+            AudioSource random = treasureSounds[Random.Range(0, treasureSounds.Count)];
+            random.Play();
         }
 
         UpdateScore();

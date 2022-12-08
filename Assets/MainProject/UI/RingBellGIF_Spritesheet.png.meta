@@ -1,0 +1,2433 @@
+fileFormatVersion: 2
+guid: 3b3bc926529a4d64e8680637a19c3f71
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9627
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661892694a268384fbaec00b14825d72
+      internalID: -29509032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 9627
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a23700eb4e89f4cbf7b6bb4c4bffb6
+      internalID: -41393632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 9627
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59ad730e63f97c4c8aae8e3588a6d91
+      internalID: 1770399429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 9627
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a4c125b0cccf94c9a9d082780195d9
+      internalID: -2097103906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 9627
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a15bcf7077f1643afcd72389bca709
+      internalID: 1961164428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 9627
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb76b2cca3def54387cb5bfcd55ce82
+      internalID: 2007776700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 9627
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0d5f90b6f0db04493e3fd28f1214db
+      internalID: -736415967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 8958
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5780408f8aac8e43acf7848f3ffa224
+      internalID: -1169296900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 8958
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a0a17d728366e4ba097bc317f6e4a4
+      internalID: 524970680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 8958
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee32d574c33e6194dbc67f35fd2797d4
+      internalID: -1986600884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 8958
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe779df248185244b9f1e04d781475f
+      internalID: -1995701733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 8958
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa55d3c954844a49a132095e3352e10
+      internalID: 559560864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 8958
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 179e9e4613c6d704f9c598fd7cc6bd31
+      internalID: -2138554784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 8958
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69eb5782469eb349974740765e3afc1
+      internalID: 454499439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 8289
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae79cc3e8dbe05240a7cc4f711dfd7bd
+      internalID: -2062980549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 8289
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880a8069accd2f842959f81093adba08
+      internalID: -1459778767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 8289
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f34222cfb6de745b01f769a8f7ebcf
+      internalID: -1895487034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 8289
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716db905c27f99d4891844f746fd66ac
+      internalID: 1903852291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 8289
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c631801aa79b91b41a8437fc6b96e7d2
+      internalID: -1259985131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 8289
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc5c4c1382b5fe40be0abec8bf75171
+      internalID: 1726460047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 8289
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752f1b8353ec8574e8cbdd9d29b9a24f
+      internalID: -1820480582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 7620
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d723cd91b9f5234fa1373073ebc3005
+      internalID: -1793022721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 7620
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41adaf91f7a8a4c49af5e061482361d3
+      internalID: 1416277658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 7620
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018bb99b6023d644facafcb046af1ae3
+      internalID: -356753831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 7620
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bdaf8bd66cc8b438bdce2531432491
+      internalID: 1553215116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 7620
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0511c0602f96bd7469df093dd2e23d86
+      internalID: 1047866065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 7620
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fb02f524f809146bcb8481000c7f8f
+      internalID: -1327916626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 7620
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51997ef4b1f0ab49a39d2ec7e3b23d7
+      internalID: 970906108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 6951
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49416caf44999bf4da820f8ef2428e8b
+      internalID: -1229438426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 6951
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac33164cf4c43ab46a10c10a4b8c651f
+      internalID: 1564942967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 6951
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160e7145b677bc742936f31ffa6e5c6c
+      internalID: -1154932605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 6951
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cba29cacd80d304684c2d3524adcff7
+      internalID: 784311271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 6951
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec332f9a48614394191d3fcd8028aed0
+      internalID: -490863721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 6951
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecd6fb6efb25b34a8a97e1eb15e897b
+      internalID: -1937641653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 6951
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a4bb225f3f3954b9e22aba28933e2e
+      internalID: -1766921605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 6282
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9a021f4e866f2418f39ec2a6d67fa2
+      internalID: -610735003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 6282
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edbf3ee798843b4a811895ed225fa5b
+      internalID: 691691688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 6282
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96297cd7bc274c4b803f4adff05724b
+      internalID: -1306292607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 6282
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91677c14eef364d4b85805e0e619dabe
+      internalID: 1808341690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 6282
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe3c32865e3b984aaebb4ee2248ec0f
+      internalID: -167574460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 6282
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e40063eb97c3247b2c731483db7617
+      internalID: 1294522554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 6282
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e627d70e4982e4ebfcc343a873f942
+      internalID: 1960846542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 5613
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441097e84328fe44d9ae16800d2bec64
+      internalID: -1287967383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 5613
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d79d122e5b80504183e04e1a644008b
+      internalID: -492400060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 5613
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f795721be25d8fb41a5466fe9bd5c78f
+      internalID: -89858687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 5613
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9860e6791c3cf694ab9deb3ff3d09f38
+      internalID: -1747737799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 5613
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8c82387d532f644a74f06db9a901d2
+      internalID: 373543403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 5613
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962aeceb11a8dcc44a652ad3a63949fb
+      internalID: -288323462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 5613
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bb6beb70b96a84fb7768361bc0978b
+      internalID: -509096409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 4944
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4086eea69cc27d4d867f76320777995
+      internalID: 21948427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 4944
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fde0680d123ab44285d46b15d70502b
+      internalID: 1769554606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 4944
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac05496d793b698478f58f5888826ee2
+      internalID: 252656214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 4944
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da95fe93aef5184c9396519d86bfd12
+      internalID: 55161257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 4944
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7101f67b81ec87c4fa53419742216063
+      internalID: -1340299268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 4944
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee633c62a981eb49b4f7193a4046e22
+      internalID: 728563311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 4944
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e38c9bec737f04d96184a69acfdef0
+      internalID: 847262072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 4275
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f61c63204144c4a898a9acbd12399b
+      internalID: -555019554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 4275
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e860cde4ebba59a4891ff7c4ff2fa652
+      internalID: -1491930801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 4275
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbe7c28120ab9c4a98cbef35652b784
+      internalID: -661406570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 4275
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c66b252282db1a4eabb13e3ca4003de
+      internalID: -780329358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 4275
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53ecfb7b6e07fa43abe3589985d66bd
+      internalID: -1369185685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 4275
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b519ca60656a8641860f6a62fe4f7cc
+      internalID: -1254979350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 4275
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab9cc460bf083441b48d857f9029178
+      internalID: 1246512695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 3606
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3204b8714c4c1ea4dbe9ca3a57a7f71b
+      internalID: -326154329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 3606
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a349d3078ad46747af8ff351091f82a
+      internalID: 709024331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 3606
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6109e03b88f3394d9875a005f400cc1
+      internalID: 2024235229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 3606
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415e82a696c05f54a98c4a94618b6218
+      internalID: -1906903839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 3606
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4159dce9db8514f87602f2fbd1689f
+      internalID: 577181325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 3606
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846e147643e22114d944ae5e9c39b894
+      internalID: -985458444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 3606
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1368c6f9288e542bfbccac395f0d91
+      internalID: -925672255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 2937
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cdf9a50aee8dc4e8ba15c34ff5e562
+      internalID: 1479340296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 2937
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3067fe0eff18194abf0378068dcc3bd
+      internalID: 323727464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2937
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81c68e57bcd5d94da8572bfb8de8fc7
+      internalID: 1412275748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 2937
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399ead2cb62eddf4da5c2c0fea34e5d7
+      internalID: -1840041629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 2937
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7ca328217a04b44bacd7b5faf3f319
+      internalID: 239709995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 2937
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d949aed1fdbbb48bb6c28bf8aad6a9
+      internalID: -1255116966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 2937
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad4545502b7dd14c8c5258061026559
+      internalID: -1131897325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 2268
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126ed3792c56fe241a3eeb61c55a78e2
+      internalID: 452469062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 2268
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95f84ed33fb8d044802f8c4a3d479f4
+      internalID: -686275730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 2268
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d805e65a67839448d77115b189ee97
+      internalID: -2049808495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 2268
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013cf280b7370714ba12543e2ded666c
+      internalID: -1373086106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 2268
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afdcb3b33935844885100e25d80be41
+      internalID: -755652952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 2268
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ad325fb1b375749afad9308364a63a
+      internalID: -1528320623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 2268
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dc2de69daa2a64ca1dc6ed84bcf148
+      internalID: -163659680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1599
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb70d5fb8a3db5419a41e6d30d662e9
+      internalID: -531236069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1599
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d1a6c6aa2d9664dae4f94ed002b032
+      internalID: -1522258435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 1599
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81fb9941258d6b48a8cf4443887f903
+      internalID: 1686125694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 1599
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29606b1cd6a08b4c9c70e181b0fde9c
+      internalID: 652250755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 1599
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79e3ea9c6a9b544db27457b32a30abf
+      internalID: 1126102940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 1599
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2889dd26ca3709d42aa467938b9349ba
+      internalID: -1945653292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 1599
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a542637fab8a2c04aa711cd9ca9da39c
+      internalID: -1456072554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_91
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 930
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a980d9a795347847bee3694448f72ed
+      internalID: 527532657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_92
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 930
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b316ab95dd7cbd04b99b6923eb24c01d
+      internalID: -1118104045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_93
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 930
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c3e054efd426748b7a46b50a114013
+      internalID: 1400438828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_94
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 930
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551a05e3479926f4bb1ce964d78834cb
+      internalID: -2128325393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_95
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 930
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b425013040ee64582f7d946c29475d
+      internalID: -1516393777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_96
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 930
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b854259195699ad47b0b6370c1dde8b3
+      internalID: -655850807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_97
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 930
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e528ec1da8e336541ad8b3d6d0f9d3c9
+      internalID: -1263349804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_98
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 261
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575203793c168c847bec7d4750ea134b
+      internalID: 681798684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_99
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 261
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b771f23afa08c0749ad7820a40056adc
+      internalID: 2022693793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_100
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 261
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236b8e31f2644d64a8d36fca9d7a8489
+      internalID: -645639882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_101
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 261
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af1b4935be0b5741a79337f0486162b
+      internalID: -390254933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_102
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 261
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168eecbd36775514887cc01248eee83a
+      internalID: 1510836130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_103
+      rect:
+        serializedVersion: 2
+        x: 4814
+        y: 261
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd60151a24c1aeb418225fa345820a37
+      internalID: 473939711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RingBellGIF_Spritesheet_104
+      rect:
+        serializedVersion: 2
+        x: 5775
+        y: 261
+        width: 961
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115e340385f2bd44d8186ddfeb804ee9
+      internalID: 186416994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3e2dea7855712b1428f398fddd40217c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      RingBellGIF_Spritesheet_44: -89858687
+      RingBellGIF_Spritesheet_55: 847262072
+      RingBellGIF_Spritesheet_91: 527532657
+      RingBellGIF_Spritesheet_101: -390254933
+      RingBellGIF_Spritesheet_70: 1479340296
+      RingBellGIF_Spritesheet_18: -1259985131
+      RingBellGIF_Spritesheet_24: 1553215116
+      RingBellGIF_Spritesheet_32: -490863721
+      RingBellGIF_Spritesheet_88: 1126102940
+      RingBellGIF_Spritesheet_99: 2022693793
+      RingBellGIF_Spritesheet_29: 1564942967
+      RingBellGIF_Spritesheet_57: -1491930801
+      RingBellGIF_Spritesheet_98: 681798684
+      RingBellGIF_Spritesheet_104: 186416994
+      RingBellGIF_Spritesheet_26: -1327916626
+      RingBellGIF_Spritesheet_33: -1937641653
+      RingBellGIF_Spritesheet_89: -1945653292
+      RingBellGIF_Spritesheet_12: -2138554784
+      RingBellGIF_Spritesheet_59: -780329358
+      RingBellGIF_Spritesheet_39: -167574460
+      RingBellGIF_Spritesheet_34: -1766921605
+      RingBellGIF_Spritesheet_62: 1246512695
+      RingBellGIF_Spritesheet_17: 1903852291
+      RingBellGIF_Spritesheet_20: -1820480582
+      RingBellGIF_Spritesheet_58: -661406570
+      RingBellGIF_Spritesheet_22: 1416277658
+      RingBellGIF_Spritesheet_5: 2007776700
+      RingBellGIF_Spritesheet_56: -555019554
+      RingBellGIF_Spritesheet_41: 1960846542
+      RingBellGIF_Spritesheet_100: -645639882
+      RingBellGIF_Spritesheet_30: -1154932605
+      RingBellGIF_Spritesheet_47: -288323462
+      RingBellGIF_Spritesheet_65: 2024235229
+      RingBellGIF_Spritesheet_40: 1294522554
+      RingBellGIF_Spritesheet_31: 784311271
+      RingBellGIF_Spritesheet_61: -1254979350
+      RingBellGIF_Spritesheet_75: -1255116966
+      RingBellGIF_Spritesheet_14: -2062980549
+      RingBellGIF_Spritesheet_2: 1770399429
+      RingBellGIF_Spritesheet_10: -1995701733
+      RingBellGIF_Spritesheet_50: 1769554606
+      RingBellGIF_Spritesheet_86: 1686125694
+      RingBellGIF_Spritesheet_103: 473939711
+      RingBellGIF_Spritesheet_90: -1456072554
+      RingBellGIF_Spritesheet_0: -29509032
+      RingBellGIF_Spritesheet_16: -1895487034
+      RingBellGIF_Spritesheet_71: 323727464
+      RingBellGIF_Spritesheet_82: -1528320623
+      RingBellGIF_Spritesheet_3: -2097103906
+      RingBellGIF_Spritesheet_97: -1263349804
+      RingBellGIF_Spritesheet_63: -326154329
+      RingBellGIF_Spritesheet_13: 454499439
+      RingBellGIF_Spritesheet_93: 1400438828
+      RingBellGIF_Spritesheet_92: -1118104045
+      RingBellGIF_Spritesheet_81: -755652952
+      RingBellGIF_Spritesheet_95: -1516393777
+      RingBellGIF_Spritesheet_45: -1747737799
+      RingBellGIF_Spritesheet_48: -509096409
+      RingBellGIF_Spritesheet_76: -1131897325
+      RingBellGIF_Spritesheet_52: 55161257
+      RingBellGIF_Spritesheet_4: 1961164428
+      RingBellGIF_Spritesheet_19: 1726460047
+      RingBellGIF_Spritesheet_8: 524970680
+      RingBellGIF_Spritesheet_9: -1986600884
+      RingBellGIF_Spritesheet_73: -1840041629
+      RingBellGIF_Spritesheet_11: 559560864
+      RingBellGIF_Spritesheet_94: -2128325393
+      RingBellGIF_Spritesheet_1: -41393632
+      RingBellGIF_Spritesheet_43: -492400060
+      RingBellGIF_Spritesheet_27: 970906108
+      RingBellGIF_Spritesheet_38: 1808341690
+      RingBellGIF_Spritesheet_67: 577181325
+      RingBellGIF_Spritesheet_102: 1510836130
+      RingBellGIF_Spritesheet_64: 709024331
+      RingBellGIF_Spritesheet_79: -2049808495
+      RingBellGIF_Spritesheet_60: -1369185685
+      RingBellGIF_Spritesheet_21: -1793022721
+      RingBellGIF_Spritesheet_36: 691691688
+      RingBellGIF_Spritesheet_28: -1229438426
+      RingBellGIF_Spritesheet_37: -1306292607
+      RingBellGIF_Spritesheet_25: 1047866065
+      RingBellGIF_Spritesheet_68: -985458444
+      RingBellGIF_Spritesheet_87: 652250755
+      RingBellGIF_Spritesheet_46: 373543403
+      RingBellGIF_Spritesheet_42: -1287967383
+      RingBellGIF_Spritesheet_51: 252656214
+      RingBellGIF_Spritesheet_69: -925672255
+      RingBellGIF_Spritesheet_78: -686275730
+      RingBellGIF_Spritesheet_66: -1906903839
+      RingBellGIF_Spritesheet_85: -1522258435
+      RingBellGIF_Spritesheet_80: -1373086106
+      RingBellGIF_Spritesheet_7: -1169296900
+      RingBellGIF_Spritesheet_53: -1340299268
+      RingBellGIF_Spritesheet_83: -163659680
+      RingBellGIF_Spritesheet_77: 452469062
+      RingBellGIF_Spritesheet_54: 728563311
+      RingBellGIF_Spritesheet_96: -655850807
+      RingBellGIF_Spritesheet_84: -531236069
+      RingBellGIF_Spritesheet_23: -356753831
+      RingBellGIF_Spritesheet_72: 1412275748
+      RingBellGIF_Spritesheet_6: -736415967
+      RingBellGIF_Spritesheet_35: -610735003
+      RingBellGIF_Spritesheet_74: 239709995
+      RingBellGIF_Spritesheet_49: 21948427
+      RingBellGIF_Spritesheet_15: -1459778767
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
