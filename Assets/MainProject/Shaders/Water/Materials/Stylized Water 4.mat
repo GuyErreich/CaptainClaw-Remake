@@ -65,12 +65,12 @@ Material:
     - _WaveNormalScale: 20
     - _WaveNormalSpeed: 0.005
     m_Colors:
-    - _DeepColor: {r: 0.46406198, g: 0.5471698, b: 0.13163047, a: 1}
+    - _DeepColor: {r: 0.11783048, g: 0.16981131, b: 0.002402986, a: 1}
     - _EdgeFoamColor: {r: 0.12156863, g: 0.107661664, b: 0.007843137, a: 1}
-    - _FarColor: {r: 0.46460226, g: 0.5566038, b: 0.17590779, a: 1}
+    - _FarColor: {r: 0.4782215, g: 0.509434, b: 0.03604485, a: 1}
     - _SSSColor: {r: 0.07647059, g: 0.13725491, b: 0.03137255, a: 1}
     - _ShadowColor: {r: 1, g: 0.20188677, b: 0.20188677, a: 1}
-    - _ShallowColor: {r: 0.3679245, g: 0.22874552, b: 0.16140084, a: 1}
-    - _SparkleColor: {r: 0.35686275, g: 0.27058825, b: 0.05490196, a: 1}
+    - _ShallowColor: {r: 0.058585886, g: 0.06666667, b: 0.0039215684, a: 1}
+    - _SparkleColor: {r: 0.20032994, g: 0.23584908, b: 0.16798684, a: 1}
     - _SunSpecularColor: {r: 0.41752324, g: 0.5019608, b: 0.28627452, a: 1}
   m_BuildTextureStacks: []
