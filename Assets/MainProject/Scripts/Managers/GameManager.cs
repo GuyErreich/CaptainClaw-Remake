@@ -10,7 +10,6 @@ namespace CaptainClaw.Scripts.Managers {
         [SerializeField] private Transform player;
 
         [Header("Game Setting")]
-        [SerializeField] private float amountOfTime = 3f;
         [SerializeField] private int numberOfLives = 3;
         [SerializeField] private int numberOfCoinsToWin = 100;
 
@@ -75,11 +74,11 @@ namespace CaptainClaw.Scripts.Managers {
         }
 
         private void TimeSupervisor() {
-            if (this.amountOfTime <= 0) {
+            if (Day_and_Night_Manager.currentTimeOfDay < 360)
+                Debug.Log("Start Timer");
+            if (Day_and_Night_Manager.currentTimeOfDay <= 0) {
                 onLose.Invoke();
             }
-
-            this.amountOfTime -= Time.deltaTime;
         }
 
         private void HealthSupervisor() {

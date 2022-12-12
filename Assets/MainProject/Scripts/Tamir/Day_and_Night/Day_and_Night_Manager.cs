@@ -33,7 +33,7 @@ public class Day_and_Night_Manager : MonoBehaviour
     [SerializeField] private GameObject timerTextParent;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private GameObject bell;
-    private float currentTimeOfDay = 60;
+    public static float currentTimeOfDay = 360;
     private void Start()
     {
         timerTextParent.SetActive(false);
