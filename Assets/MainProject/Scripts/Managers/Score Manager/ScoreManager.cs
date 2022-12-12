@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
     private int _score = 0;
     private bool gameOver;
-    private static int currentScore = 0;
+    private int currentScore = 0;
     //private int topScore = 0;
 
 
@@ -22,6 +22,23 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI winScoreText;
     public TextMeshProUGUI loseScoreText;
     //public Text topScoreText;
+
+    private static ScoreManager _instance;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(_instance);
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -61,10 +78,10 @@ public class ScoreManager : MonoBehaviour
         if (gameOver)
         { return; }
 
-        currentScore += scoreToAdd;
-        if (currentScore < 0)
+        _instance.currentScore += scoreToAdd;
+        if (_instance.currentScore < 0)
         {
-            currentScore = 0;
+            _instance.currentScore = 0;
         }
 
         treasuresPickedUp++; // Tamir Added
@@ -83,25 +100,25 @@ public class ScoreManager : MonoBehaviour
     {
         if (winScoreText)
         {
-            winScoreText.text = currentScore.ToString();
+            winScoreText.text = _instance.currentScore.ToString();
         }
         if (loseScoreText)
         {
-            loseScoreText.text = currentScore.ToString();
+            loseScoreText.text = _instance.currentScore.ToString();
         }
         if (HUDScoreText)
         {
-            HUDScoreText.text = currentScore.ToString();
+            HUDScoreText.text = _instance.currentScore.ToString();
         }
         else
         {
-            Debug.Log("Current Score is : " + currentScore);
+            Debug.Log("Current Score is : " + _instance.currentScore);
         }
     }
 
     public static int GetCurrentScore()
     {
-        return currentScore;
+        return _instance.currentScore;
     }
 
 }

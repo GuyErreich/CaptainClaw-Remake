@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using CaptainClaw.Scripts.Player;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 namespace CaptainClaw.Scripts.Managers {
     public class GameManager : MonoBehaviour, ISerializationCallbackReceiver {
@@ -35,16 +36,16 @@ namespace CaptainClaw.Scripts.Managers {
 
         private void Awake() {
             if (_instance == null) {
-
                 _instance = this;
                 DontDestroyOnLoad(this.gameObject);
-
-                //Rest of your Awake code
-                this.currentPauseState = this.OnPause;
             } 
             else {
-                Destroy(this);
+                Destroy(_instance);
+                _instance = this;
+                DontDestroyOnLoad(this.gameObject);
             }
+                //Rest of your Awake code
+                this.currentPauseState = this.OnPause;
         }
 
         private void Update() {
@@ -63,6 +64,11 @@ namespace CaptainClaw.Scripts.Managers {
             onPause.Invoke();
 
             this.currentPauseState = this.OnUnpause;
+            
+            //to lock in the centre of window
+            Cursor.lockState = CursorLockMode.Confined;
+            //to hide the curser
+            Cursor.visible = true;
         }
 
         private void OnUnpause() {
@@ -71,6 +77,10 @@ namespace CaptainClaw.Scripts.Managers {
             onUnpause.Invoke();
 
             this.currentPauseState = this.OnPause;
+            //to lock in the centre of window
+            Cursor.lockState = CursorLockMode.Locked;
+            //to hide the curser
+            Cursor.visible = false;
         }
 
         private void TimeSupervisor() {
@@ -86,12 +96,19 @@ namespace CaptainClaw.Scripts.Managers {
                 this.player.position = SpawnPosition;
                 Reset();
             }
-            if (PlayerStats.CurrentHealth <= 0) {
-                Mathf.Clamp(this.numberOfLives, 0, Mathf.Infinity);
-                PlayerStats.CurrentHealth = PlayerStats.MaxHealth;
-                Reset();
-                this.player.position = SpawnPosition;
+            if (PlayerStats.CurrentHealth <= 0)
+            {
+                StartCoroutine(this.OnDeath());
             }
+        }
+
+        private IEnumerator OnDeath()
+        {
+            Mathf.Clamp(this.numberOfLives, 0, Mathf.Infinity);
+            PlayerStats.CurrentHealth = PlayerStats.MaxHealth;
+            this.player.position = SpawnPosition;
+            yield return new WaitForSeconds(1);
+            Reset();
         }
 
         public static void EndGame() {

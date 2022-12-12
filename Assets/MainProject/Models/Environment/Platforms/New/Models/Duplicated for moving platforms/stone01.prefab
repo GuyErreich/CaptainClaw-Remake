@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6511513208043824597}
   m_Layer: 0
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 5791084107046972541}
   m_Layer: 0
   m_Name: stone01
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1550966852234255682}
   m_Layer: 0
   m_Name: P3
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 8954590341643055106}
   m_Layer: 0
   m_Name: stone03
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

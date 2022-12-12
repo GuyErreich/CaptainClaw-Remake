@@ -7,12 +7,12 @@ using System;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public Scene firstScene;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("hello");
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void QuitGame()
     {
@@ -20,8 +20,8 @@ public class MainMenuManager : MonoBehaviour
     }
     public void LoadScene(int sceneNum)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneNum);
-        
     }
 
 }

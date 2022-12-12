@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/MainProject/Scenes/Scenes/Main Menu - Based on Forest.unity
     guid: aaacf5eb1b779774cb5120611381cf90
   - enabled: 1
