@@ -37,15 +37,13 @@ namespace CaptainClaw.Scripts.Managers {
         private void Awake() {
             if (_instance == null) {
                 _instance = this;
-                DontDestroyOnLoad(this.gameObject);
+                // DontDestroyOnLoad(this.gameObject);
+                
+                this.currentPauseState = this.OnPause;
             } 
             else {
-                Destroy(_instance);
-                _instance = this;
-                DontDestroyOnLoad(this.gameObject);
+                Destroy(this.gameObject);
             }
-                //Rest of your Awake code
-                this.currentPauseState = this.OnPause;
         }
 
         private void Update() {
