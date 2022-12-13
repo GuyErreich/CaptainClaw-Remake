@@ -105,7 +105,7 @@ namespace CaptainClaw.Scripts.Managers {
             Mathf.Clamp(this.numberOfLives, 0, Mathf.Infinity);
             PlayerStats.CurrentHealth = PlayerStats.MaxHealth;
             this.player.position = SpawnPosition;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.3f);
             Reset();
         }
 

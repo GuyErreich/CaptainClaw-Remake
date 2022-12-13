@@ -34,6 +34,8 @@ public class Day_and_Night_Manager : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private GameObject bell;
     public static float currentTimeOfDay = 360;
+    public GameObject textForAlarmSpeech;
+
     private void Start()
     {
         timerTextParent.SetActive(false);
@@ -78,10 +80,13 @@ public class Day_and_Night_Manager : MonoBehaviour
         {
             alarmSpeech.Play();
             speechHBP++;
+            textForAlarmSpeech.SetActive(true);
+
         }
         if (TimeOfDay >= 310)
         {
             alarmAudio.Stop();
+            textForAlarmSpeech.SetActive(false);
         }
     }
 
