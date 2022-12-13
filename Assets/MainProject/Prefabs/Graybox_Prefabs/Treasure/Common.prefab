@@ -227,6 +227,120 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &1645832818138869567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6503921903377247920}
+    m_Modifications:
+    - target: {fileID: 3046206241480760624, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_Name
+      value: 1 Light Particle For Gold
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.269
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+--- !u!1001 &3360016006136093906
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6503921903377247920}
+    m_Modifications:
+    - target: {fileID: 3046206241480760624, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_Name
+      value: 1 Light Particle For Gold (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
 --- !u!1001 &6757699612788885851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playsound: {fileID: 6104432415928253551}
+  textForSound: {fileID: 0}
 --- !u!1 &5839271163961717770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 21e618f5becb1b04592bf5535b3827da, type: 3}
@@ -363,3 +478,117 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21e618f5becb1b04592bf5535b3827da, type: 3}
   m_PrefabInstance: {fileID: 6757699612788885851}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8614474382317887784
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6503921903377247920}
+    m_Modifications:
+    - target: {fileID: 3046206241480760624, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_Name
+      value: 1 Light Particle For Gold (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.447
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.173
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+--- !u!1001 &8990596734279486683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6503921903377247920}
+    m_Modifications:
+    - target: {fileID: 3046206241480760624, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_Name
+      value: 1 Light Particle For Gold (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.469
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.173
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3047797933875985936, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abe1f9ee3c8c92246b4ebd01b4a2303b, type: 3}
