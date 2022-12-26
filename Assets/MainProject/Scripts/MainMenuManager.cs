@@ -21,7 +21,7 @@ public class MainMenuManager : MonoBehaviour
     public void LoadScene(int sceneNum)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneNum);
+        SceneManager.LoadSceneAsync(sceneNum);
     }
 
 }

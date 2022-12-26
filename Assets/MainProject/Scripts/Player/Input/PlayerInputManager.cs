@@ -19,15 +19,19 @@ namespace CaptainClaw.Scripts.Player
         private Vector2 currentMovementInput, smoothMovementVelocity;
 
         private void Awake() {
-            //to lock in the centre of window
-            Cursor.lockState = CursorLockMode.Locked;
-            //to hide the curser
-            Cursor.visible = false;
 
             this.controls = new PlayerControls();
 
             this.CharacterInput();
             // this.SlimeRepoInput();
+        }
+
+        private void Start()
+        {
+            //to lock in the centre of window
+            Cursor.lockState = CursorLockMode.Locked;
+            //to hide the curser
+            Cursor.visible = false;
         }
 
         private void Update() {

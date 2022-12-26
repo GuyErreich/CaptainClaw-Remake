@@ -22,6 +22,7 @@ namespace CaptainClaw.Scripts.Managers {
         [SerializeField] private UnityEvent onLose;
         [SerializeField] private UnityEvent onNotEnoughCoins;
         [SerializeField] private UnityEvent onWin;
+        [SerializeField] private UnityEvent onStart;
 
         private static GameManager _instance;
         private float lastTimeScale;
@@ -37,13 +38,18 @@ namespace CaptainClaw.Scripts.Managers {
         private void Awake() {
             if (_instance == null) {
                 _instance = this;
-                // DontDestroyOnLoad(this.gameObject);
+                //DontDestroyOnLoad(this.gameObject);
                 
-                this.currentPauseState = this.OnPause;
             } 
             else {
                 Destroy(this.gameObject);
             }
+        }
+
+        private void Start()
+        {
+            onStart.Invoke();
+            this.currentPauseState = this.OnPause;
         }
 
         private void Update() {
@@ -85,6 +91,11 @@ namespace CaptainClaw.Scripts.Managers {
             if (Day_and_Night_Manager.currentTimeOfDay < 360)
                 Debug.Log("Start Timer");
             if (Day_and_Night_Manager.currentTimeOfDay <= 0) {
+                _instance.currentPauseState = () => { return; };
+                //to lock in the centre of window
+                Cursor.lockState = CursorLockMode.Confined;
+                //to hide the curser
+                Cursor.visible = true;
                 onLose.Invoke();
             }
         }
@@ -110,6 +121,11 @@ namespace CaptainClaw.Scripts.Managers {
         }
 
         public static void EndGame() {
+            _instance.currentPauseState = () => { return; };
+            //to lock in the centre of window
+            Cursor.lockState = CursorLockMode.Confined;
+            //to hide the curser
+            Cursor.visible = true;
             if (ScoreManager.GetCurrentScore() <= _instance.numberOfCoinsToWin) {
                 _instance.onNotEnoughCoins.Invoke();
             }
