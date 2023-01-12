@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-[ExecuteAlways]
+
 public class Day_and_Night_Manager : MonoBehaviour
 {
     [Header("Light")]
@@ -33,7 +33,7 @@ public class Day_and_Night_Manager : MonoBehaviour
     [SerializeField] private GameObject timerTextParent;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private GameObject bell;
-    public static float currentTimeOfDay = 360;
+    public float currentTimeOfDay = 360;
     public GameObject textForAlarmSpeech;
 
     private void Start()
@@ -46,6 +46,7 @@ public class Day_and_Night_Manager : MonoBehaviour
             return;
 
         currentTimeOfDay = 360 - TimeOfDay;
+ 
 
         if (Application.isPlaying)
         {

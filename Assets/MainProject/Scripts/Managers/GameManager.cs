@@ -4,11 +4,14 @@ using CaptainClaw.Scripts.Player;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-namespace CaptainClaw.Scripts.Managers {
-    public class GameManager : MonoBehaviour, ISerializationCallbackReceiver {
+namespace CaptainClaw.Scripts.Managers
+{
+    public class GameManager : MonoBehaviour, ISerializationCallbackReceiver
+    {
         [Header("References")]
         [SerializeField] private Transform startingPoint;
         [SerializeField] private Transform player;
+        [SerializeField] Day_and_Night_Manager TimeDayManger;
 
         [Header("Game Setting")]
         [SerializeField] private int numberOfLives = 3;
@@ -24,24 +27,30 @@ namespace CaptainClaw.Scripts.Managers {
         [SerializeField] private UnityEvent onWin;
         [SerializeField] private UnityEvent onStart;
 
+
         private static GameManager _instance;
         private float lastTimeScale;
 
-        public static Vector3 SpawnPosition { get; set;}
-        public static int NumberOfLives { get; private set;}
+        public static Vector3 SpawnPosition { get; set; }
+        public static int NumberOfLives { get; private set; }
 
         private delegate void PauseState();
         private PauseState currentPauseState;
         public delegate void ResetLevel();
-        public static ResetLevel Reset { get; set;}
+        public static ResetLevel Reset { get; set; }
 
-        private void Awake() {
-            if (_instance == null) {
+        public bool ReachedEndGame = true;
+
+        private void Awake()
+        {
+            if (_instance == null)
+            {
                 _instance = this;
                 //DontDestroyOnLoad(this.gameObject);
-                
-            } 
-            else {
+
+            }
+            else
+            {
                 Destroy(this.gameObject);
             }
         }
@@ -52,30 +61,34 @@ namespace CaptainClaw.Scripts.Managers {
             this.currentPauseState = this.OnPause;
         }
 
-        private void Update() {
+        private void Update()
+        {
             this.HealthSupervisor();
             this.TimeSupervisor();
         }
 
-        public static void Pause() {
+        public static void Pause()
+        {
             _instance.currentPauseState();
         }
 
-        private void OnPause() {
+        private void OnPause()
+        {
             this.lastTimeScale = Time.timeScale;
             Time.timeScale = 0;
 
             onPause.Invoke();
 
             this.currentPauseState = this.OnUnpause;
-            
+
             //to lock in the centre of window
             Cursor.lockState = CursorLockMode.Confined;
             //to hide the curser
             Cursor.visible = true;
         }
 
-        private void OnUnpause() {
+        private void OnUnpause()
+        {
             Time.timeScale = this.lastTimeScale;
 
             onUnpause.Invoke();
@@ -87,10 +100,12 @@ namespace CaptainClaw.Scripts.Managers {
             Cursor.visible = false;
         }
 
-        private void TimeSupervisor() {
-            if (Day_and_Night_Manager.currentTimeOfDay < 360)
-                Debug.Log("Start Timer");
-            if (Day_and_Night_Manager.currentTimeOfDay <= 0) {
+        private void TimeSupervisor()
+        {
+            if (TimeDayManger.currentTimeOfDay > 30)
+            Debug.Log("Start Timer");
+            if (TimeDayManger.currentTimeOfDay <= 0 )
+            {
                 _instance.currentPauseState = () => { return; };
                 //to lock in the centre of window
                 Cursor.lockState = CursorLockMode.Confined;
@@ -100,8 +115,10 @@ namespace CaptainClaw.Scripts.Managers {
             }
         }
 
-        private void HealthSupervisor() {
-            if (NumberOfLives <= 0) {
+        private void HealthSupervisor()
+        {
+            if (NumberOfLives <= 0)
+            {
                 this.player.position = SpawnPosition;
                 Reset();
             }
@@ -113,6 +130,7 @@ namespace CaptainClaw.Scripts.Managers {
 
         private IEnumerator OnDeath()
         {
+            Debug.LogError("Death event");
             Mathf.Clamp(this.numberOfLives, 0, Mathf.Infinity);
             PlayerStats.CurrentHealth = PlayerStats.MaxHealth;
             this.player.position = SpawnPosition;
@@ -120,16 +138,21 @@ namespace CaptainClaw.Scripts.Managers {
             Reset();
         }
 
-        public static void EndGame() {
+        public static void EndGame()
+        {
+
+            Debug.LogError("On EndGame event");
             _instance.currentPauseState = () => { return; };
             //to lock in the centre of window
             Cursor.lockState = CursorLockMode.Confined;
             //to hide the curser
             Cursor.visible = true;
-            if (ScoreManager.GetCurrentScore() <= _instance.numberOfCoinsToWin) {
+            if (ScoreManager.GetCurrentScore() <= _instance.numberOfCoinsToWin)
+            {
                 _instance.onNotEnoughCoins.Invoke();
             }
-            else {
+            else
+            {
                 _instance.onWin.Invoke();
             }
         }
